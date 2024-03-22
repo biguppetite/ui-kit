@@ -1,2 +1,2 @@
-# uk-kit
+# ui-kit
 UI Kit
