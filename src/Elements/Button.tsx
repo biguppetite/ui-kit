@@ -5,7 +5,7 @@ export interface ButtonProps {
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({ label }) => {
-  return <button>{label}</button>;
+  return <button className="bg-primary">{label}</button>;
 };
 
 export default Button;

@@ -24,7 +24,14 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss({
+      config: {
+        path: "./postcss.config.js",
+      },
       extensions: [".css"],
+      minimize: true,
+      inject: {
+        insertAt: "top",
+      },
     }),
   ],
 };
