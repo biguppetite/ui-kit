@@ -1,4 +1,5 @@
+import './styles/index.css'
 import Button from './Elements/Button'
-import './index.css'
+import UseTheme from './Hooks/UseTheme'
 
-export default {Button};
+export default {Button, UseTheme};

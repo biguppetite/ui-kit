@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Button from "../Elements/Button";
+import Button, { buttonType } from "../Elements/Button";
 
 const meta = {
   title: "Example/Button",
@@ -19,5 +19,6 @@ type Story = StoryObj<typeof meta>;
 export const Checked: Story = {
   args: {
     label: "Button",
+    btnType: buttonType.danger
   },
 };
