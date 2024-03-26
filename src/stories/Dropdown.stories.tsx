@@ -20,6 +20,17 @@ export const basic: Story = {
   args: {
     label: "Dropdown",
     value: "",
-    items: ["a", "b", "c", "d", "e"],
+    items: [
+      "United States",
+      "Canada",
+      "France",
+      "Brazil",
+      "China",
+      "India",
+      "Australia",
+      "Japan",
+      "Germany",
+      "South Africa",
+    ],
   },
 };

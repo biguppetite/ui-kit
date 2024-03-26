@@ -1,4 +1,10 @@
-import React, { HTMLAttributes, useState } from "react";
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  HTMLAttributes,
+  useState,
+} from "react";
+import { XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   label?: string;
@@ -10,6 +16,9 @@ export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   clearable?: boolean;
   editable?: boolean;
   itemLabel?: string;
+  hideDropdownBtn?: boolean;
+  itemTemplate?: (e: any) => JSX.Element;
+  itemClassName?: string;
 }
 
 const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -19,35 +28,102 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
   items,
   placeholder,
   value,
-  clearable = true,
-  editable,
+  clearable,
+  editable = true,
   itemLabel,
-
+  hideDropdownBtn,
+  itemTemplate,
+  itemClassName,
   onChange,
   className,
 }) => {
-  const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(null);
-  const [display, setDisplay] = useState(value);
+  const [selected, setSelected] = useState<string | null>(value);
+  const [inputValue, setInputValue] = useState<string | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setVisible(true);
+    setSelected(null);
+    setInputValue(e.target.value);
+    if (onChange) onChange(e);
+  };
+
+  const selectValue = (data: any) => {
+    setSelected(itemLabel ? data[itemLabel] : data);
+    setInputValue(null);
+    setVisible(false);
+    if (onChange) onChange(data);
+  };
+
+  const generateList = () => {
+    const data: JSX.Element[] = [];
+    items?.forEach(
+      (item, index) =>
+        (!inputValue ||
+          (itemLabel ? item[itemLabel] : item).includes(inputValue)) &&
+        data.push(
+          <li
+            onClick={() => selectValue(item)}
+            className={`px-3 py-1 hover:bg-creme duration-150 transition-all cursor-pointer ${itemClassName}`}
+            key={index}
+          >
+            {itemTemplate
+              ? itemTemplate(item)
+              : itemLabel
+                ? item[itemLabel]
+                : item}
+          </li>
+        )
+    );
+
+    return data.length > 0 ? (
+      data
+    ) : (
+      <div className="p-2 flex items-center justify-center font-semibold">
+        Not found
+      </div>
+    );
+  };
 
   return (
     <div className={`relative ${className}`}>
       {label && <label className="form-label">{label}</label>}
 
       <div className="relative">
-        <div className="flex items-center">
+        <div className="flex items-stretch  border border-navy rounded-md overflow-hidden z-50 relative bg-white">
           <input
             disabled={!editable}
-            className={`${inputClassName}`}
+            className={`flex-1 p-2 focus:outline-none ${inputClassName}`}
             placeholder={placeholder}
+            onChange={changeValue}
+            value={inputValue || selected || ""}
           />
-          <div> * </div>
+          {clearable && (
+            <div className="w-5 h-5 cursor-pointer flex items-center justify-center rounded-full bg-navy text-white my-auto mr-2">
+              <XMarkIcon className="w-4" />
+            </div>
+          )}
+          {!hideDropdownBtn && (
+            <div
+              onClick={() => setVisible((pre) => !pre)}
+              className="w-12 flex items-center justify-center cursor-pointer border-l border-navy"
+            >
+              <ChevronDownIcon className="w-5" />
+            </div>
+          )}
         </div>
-        <ul className="absolute top-full left-0 w-full ">
-          {items?.map((item, index) => (
-            <li key={index}>{itemLabel ? item[itemLabel] : item}</li>
-          ))}
+        <ul
+          className={`absolute top-full left-0 w-full shadow-lg bg-white transition-all duration-200 max-h-0 overflow-hidden ${visible && "max-h-screen z-50"}`}
+        >
+          {generateList()}
         </ul>
+
+        {visible && (
+          <div
+            className="w-screen h-screen fixed top-0 left-0 bg-transparent z-40"
+            onClick={() => setVisible(false)}
+          />
+        )}
       </div>
 
       {errors && <div className="form-error">{errors}</div>}
