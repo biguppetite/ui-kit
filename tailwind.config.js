@@ -25,7 +25,8 @@ module.exports = {
       vibrantRed: 'var(--color-vibrantRed)',
       coral: 'var(--color-coral)',
       bruntOrange: 'var(--color-bruntOrange)',
-      navy: 'var(--color-navy)'
+      navy: 'var(--color-navy)',
+      primary: 'var(--color-primary)'
     },
     fontFamily: {
       sofia: ["Sofia Pro"],
