@@ -6,6 +6,7 @@ import Input from "./Elements/Input";
 import Carousel from "./Elements/Carousel";
 import Dropdown from "./Elements/Dropdown";
 import SwitchButton from "./Elements/SwitchButton";
+import Accordion from "./Elements/Accordion";
 
 export default {
   Button,
@@ -15,4 +16,5 @@ export default {
   Carousel,
   Dropdown,
   SwitchButton,
+  Accordion
 };

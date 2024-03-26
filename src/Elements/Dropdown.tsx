@@ -63,7 +63,7 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
         data.push(
           <li
             onClick={() => selectValue(item)}
-            className={`px-3 py-1 hover:bg-creme duration-150 transition-all cursor-pointer ${itemClassName}`}
+            className={`px-3 py-1 hover:bg-gray-200 duration-150 transition-all cursor-pointer ${itemClassName}`}
             key={index}
           >
             {itemTemplate
@@ -89,7 +89,7 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
       {label && <label className="form-label">{label}</label>}
 
       <div className="relative">
-        <div className="flex items-stretch  border border-navy rounded-md overflow-hidden z-50 relative bg-white">
+        <div className="flex items-stretch  border border-gray-500 rounded-md overflow-hidden z-50 relative bg-white">
           <input
             disabled={!editable}
             className={`flex-1 p-2 focus:outline-none ${inputClassName}`}
@@ -98,14 +98,14 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
             value={inputValue || selected || ""}
           />
           {clearable && (
-            <div className="w-5 h-5 cursor-pointer flex items-center justify-center rounded-full bg-navy text-white my-auto mr-2">
+            <div className="w-5 h-5 cursor-pointer flex items-center justify-center rounded-full bg-gray-300 text-white my-auto mr-2">
               <XMarkIcon className="w-4" />
             </div>
           )}
           {!hideDropdownBtn && (
             <div
               onClick={() => setVisible((pre) => !pre)}
-              className="w-12 flex items-center justify-center cursor-pointer border-l border-navy"
+              className="w-12 flex items-center justify-center cursor-pointer border-l border-gray-300"
             >
               <ChevronDownIcon className="w-5" />
             </div>
