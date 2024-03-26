@@ -1,6 +1,5 @@
 import React, {
   ChangeEvent,
-  ChangeEventHandler,
   HTMLAttributes,
   useState,
 } from "react";

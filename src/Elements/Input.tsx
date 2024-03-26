@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { ChangeEvent, InputHTMLAttributes, useState } from "react";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -20,6 +20,13 @@ const Input: React.FunctionComponent<InputProps> = ({
     props.value = "";
   }
 
+  const [inValue, setInValue] = useState(props.value);
+
+  const changeEvent = (e: ChangeEvent<HTMLInputElement>) => {
+    setInValue(e.target.value);
+    if (props.onChange) props.onChange(e);
+  };
+
   return (
     <div className={className}>
       {label && (
@@ -29,8 +36,10 @@ const Input: React.FunctionComponent<InputProps> = ({
       )}
       <input
         {...props}
+        value={inValue}
         id={name}
         className={`form-input ${inputClassName} ${errors.length ? "form-input-error" : ""}`}
+        onChange={changeEvent}
       />
       {child && child}
       {errors.length > 0 && <div className="form-error">{errors}</div>}
