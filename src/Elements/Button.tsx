@@ -11,7 +11,7 @@ export enum buttonType {
   disclosure = "disclosure",
 }
 
-export interface ButtonProps extends HTMLButtonElement {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   btnType: buttonType;
   label: string;
   parentClassName?: string;
