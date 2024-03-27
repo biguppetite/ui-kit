@@ -29,7 +29,7 @@ module.exports = {
       primary: 'var(--color-primary)'
     },
     fontFamily: {
-      sofia: ["Sofia Pro"],
+      primary_font: ["var(--font-primary)"],
     }
   },
   variants: {

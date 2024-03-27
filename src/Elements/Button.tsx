@@ -41,7 +41,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   return (
     <div className={`flex flex-col ${parentClassName}`}>
       <button
-        className={`flex items-center justify-center ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
+        className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
         name={props.name}
       >
         {label}

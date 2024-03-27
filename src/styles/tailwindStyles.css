@@ -436,6 +436,7 @@ video {
 }
 
 :root {
+  --font-primary: "TacOne";
   --color-creme: #ffe3c8;
   --color-cremeLight: #fbf7f3;
   --color-candyPink: #ffb1ca;
@@ -443,7 +444,11 @@ video {
   --color-coral: #ff3c37;
   --color-bruntOrange: #ff510d;
   --color-navy: #002c52;
-  --color-primary: #FFAE00;
+  --color-primary: #ffae00;
+}
+
+* {
+  font-family: var(--font-primary);
 }
 
 *, ::before, ::after {
@@ -544,6 +549,12 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+
+.button-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-open-mobile-menu {
@@ -1394,6 +1405,14 @@ video {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+@font-face {
+  font-family: "TacOne";
+
+  font-weight: bold;
+
+  src: url("./TacOne-Regular.ttf") format("opentype");
 }
 
 .before\:translate-x-5::before {

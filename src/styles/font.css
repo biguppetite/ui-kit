@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "TacOne";
+  font-weight: bold;
+  src: url("./TacOne-Regular.ttf") format("opentype");
+}
+
+@layer base {
+  :root {
+    --font-primary: "TacOne";
+  }
+}

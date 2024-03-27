@@ -2,15 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "./button.css";
-@import "./input.css" ;
-@import "./spinner.css" ;
-@import './Modal.css';
-@import './accordion.css';
-@import './carousel.css';
-@import './switchButton.css';
-@import './dropDown.css';
+@import "./Elements/button.css";
+@import "./Elements/input.css";
+@import "./Elements/spinner.css";
+@import "./Elements/Modal.css";
+@import "./Elements/accordion.css";
+@import "./Elements/carousel.css";
+@import "./Elements/switchButton.css";
+@import "./Elements/dropDown.css";
 
+@import "./font.css";
 
 @layer base {
   :root {
@@ -21,6 +22,10 @@
     --color-coral: #ff3c37;
     --color-bruntOrange: #ff510d;
     --color-navy: #002c52;
-    --color-primary: #FFAE00;
+    --color-primary: #ffae00;
+  }
+
+  * {
+    @apply font-primary_font;
   }
 }
