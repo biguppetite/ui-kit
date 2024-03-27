@@ -1109,6 +1109,16 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
+.ratingFillStar {
+  width: 1.5rem;
+  fill: #eab308;
+}
+
+.ratingEmptyStar {
+  width: 1.5rem;
+  stroke: #4b5563;
+}
+
 .visible {
   visibility: visible;
 }

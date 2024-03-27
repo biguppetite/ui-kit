@@ -1,0 +1,9 @@
+@layer components {
+    .ratingFillStar {
+        @apply fill-yellow-500 w-6;
+    }
+
+    .ratingEmptyStar {
+        @apply stroke-gray-600 w-6;
+    }
+}
