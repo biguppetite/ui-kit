@@ -13,7 +13,7 @@ export interface CarouselProps {
   leftControlIconClass?: string;
   rightControlIconClass?: string;
   containerClassName?: string;
-  activeSlideClassName?:string
+  activeSlideClassName?: string;
 }
 
 const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
@@ -28,14 +28,12 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
     leftControlIconClass,
     rightControlIconClass,
     containerClassName,
-    activeSlideClassName
+    activeSlideClassName,
   } = props;
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const ControlClass = `z-10 absolute top-1/2 -translate-y-1/2 w-8 h-8 border border-Gray_200 rounded-full flex items-center  justify-center  focus:outline-none ${controlClass}`;
-
   return (
-    <div className={`w-full relative ${containerClassName}`}>
+    <div className={`carouselContainer ${containerClassName}`}>
       <SimplyCarousel
         preventScrollOnSwipe
         swipeTreshold={60}
@@ -43,12 +41,7 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
         centerMode
         onRequestChange={setActiveSlide}
         containerProps={{
-          className: "w-full",
-          style: {
-            width: "100%",
-            justifyContent: "space-between",
-            userSelect: "none",
-          },
+          className: "w-full justify-between",
         }}
         innerProps={{
           className: "w-full !max-w-full",
@@ -57,23 +50,23 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
           className: "",
         }}
         activeSlideProps={{
-            className: activeSlideClassName
+          className: activeSlideClassName,
         }}
         forwardBtnProps={{
           children: (
             <ArrowLeftIcon
-              className={`rotate-180 text-black w-5 ${rightControlIconClass}`}
+              className={`rotate-180 carouselControlIcon ${rightControlIconClass}`}
             />
           ),
-          className: `${ControlClass} right-0 ${rightControlClass}`,
+          className: `carouselControl ${controlClass} right-0 ${rightControlClass}`,
         }}
         backwardBtnProps={{
           children: (
             <ArrowLeftIcon
-              className={`text-black w-5 ${leftControlIconClass} `}
+              className={`carouselControlIcon ${leftControlIconClass} `}
             />
           ),
-          className: `${ControlClass} left-0 ${leftControlClass}`,
+          className: `carouselControl ${controlClass} left-0 ${leftControlClass}`,
         }}
         dotsNav={{
           show: !!showDotsNav,

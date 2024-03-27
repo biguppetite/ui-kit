@@ -63,7 +63,7 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
         data.push(
           <li
             onClick={() => selectValue(item)}
-            className={`px-3 py-1 hover:bg-gray-200 duration-150 transition-all cursor-pointer ${itemClassName}`}
+            className={`dropdownItem ${itemClassName}`}
             key={index}
           >
             {itemTemplate

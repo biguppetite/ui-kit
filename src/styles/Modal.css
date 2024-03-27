@@ -1,0 +1,9 @@
+@layer components {
+    .modalContainer {
+        @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white rounded-lg z-50 shadow-lg min-w-96 w-max overflow-hidden min-h-16;
+    }
+    
+    .modalCloseBtn {
+        @apply absolute top-3 left-3 cursor-pointer text-lg;
+    }
+}

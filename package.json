@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "start-storybook": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/tailwindStyles.css --watch",
+    "start-style": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/tailwindStyles.css --watch",
     "build": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -20,23 +20,23 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
 
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`accordionMain ${className}`}>
       {items.map((item, index) => (
         <div className="w-full" key={index}>
           <div
             onClick={() => setActiveIndex(index === activeIndex ? null : index)}
-            className={`border-b border-gray-200 w-full py-2 flex items-center cursor-pointer ${titleClassName}`}
+            className={`accordionTitle ${titleClassName}`}
           >
             {item.title}
 
             <ChevronDownIcon
-              className={`ml-auto w-5 ${dropDownIconClassName}`}
+              className={`accordionIcon ${dropDownIconClassName}`}
             />
           </div>
           <div
             className={`max-h-0 w-full overflow-hidden transition-all duration-200 ${index === activeIndex && "max-h-screen"}`}
           >
-            <div className={`p-3 border-b border-gray-200 ${contentClassName}`}>
+            <div className={`accordionContainer ${contentClassName}`}>
               {item.content}
             </div>
           </div>

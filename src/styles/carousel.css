@@ -1,0 +1,13 @@
+@layer components {
+    .carouselControl{
+        @apply z-10 absolute top-1/2 -translate-y-1/2 w-8 h-8 border border-gray-400 rounded-full flex items-center  justify-center  focus:outline-none;
+    }
+
+    .carouselControlIcon {
+        @apply text-black w-5;
+    }
+
+    .carouselContainer {
+        @apply w-full relative;
+    }
+}

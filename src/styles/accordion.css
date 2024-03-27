@@ -1,0 +1,14 @@
+@layer components {
+  .accordionMain {
+    @apply w-full;
+  }
+  .accordionTitle {
+    @apply border-b border-gray-200 w-full py-2 flex items-center cursor-pointer;
+  }
+  .accordionContainer {
+    @apply p-3 border-b border-gray-200;
+  }
+  .accordionIcon {
+    @apply ml-auto w-5;
+  }
+}

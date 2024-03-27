@@ -4,6 +4,13 @@
 
 @import "./button.css";
 @import "./input.css" ;
+@import "./spinner.css" ;
+@import './Modal.css';
+@import './accordion.css';
+@import './carousel.css';
+@import './switchButton.css';
+@import './dropDown.css';
+
 
 @layer base {
   :root {

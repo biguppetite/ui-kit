@@ -1,0 +1,10 @@
+@layer components {
+  .switchButtonContainer {
+    @apply relative inline-block w-10 h-5 rounded-full;
+  }
+
+  .switchButtonBubble {
+    @apply rounded-full absolute cursor-pointer top-0 left-0 right-0 bottom-0  duration-200
+        before:absolute before:content-[""] before:h-3  before:w-3 before:rounded-full before:bg-white before:left-1 before:top-1/2 before:-translate-y-1/2 before:duration-200;
+  }
+}
