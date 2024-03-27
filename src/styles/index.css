@@ -11,21 +11,13 @@
 @import "./Elements/switchButton.css";
 @import "./Elements/dropDown.css";
 @import "./Elements/rating.css";
+@import "./Elements/scrollList.css";
+
+@import './variables.css';
 
 @import "./font.css";
 
 @layer base {
-  :root {
-    --color-creme: #ffe3c8;
-    --color-cremeLight: #fbf7f3;
-    --color-candyPink: #ffb1ca;
-    --color-vibrantRed: #ff0000;
-    --color-coral: #ff3c37;
-    --color-bruntOrange: #ff510d;
-    --color-navy: #002c52;
-    --color-primary: #ffae00;
-  }
-
   * {
     @apply font-primary_font;
   }

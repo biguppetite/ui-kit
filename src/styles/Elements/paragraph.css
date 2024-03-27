@@ -1,0 +1,5 @@
+@layer components {
+    .paragraph {
+        @apply text-text-dark text-sm md:text-base font-primary_font;
+    }
+}
