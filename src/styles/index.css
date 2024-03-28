@@ -12,9 +12,11 @@
 @import "./Elements/dropDown.css";
 @import "./Elements/rating.css";
 @import "./Elements/scrollList.css";
+@import "./Elements/header.css";
+
+@import './components/card.css';
 
 @import './variables.css';
-
 @import "./font.css";
 
 @layer base {

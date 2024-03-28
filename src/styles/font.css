@@ -1,5 +1,53 @@
 @font-face {
-  font-family: "TacOne";
-  font-weight: bold;
-  src: url("./TacOne-Regular.ttf") format("opentype");
+  font-family: "Poppins";
+  src: url("./font/Poppins-Bold.ttf") ;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-SemiBold.ttf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-ExtraBold.ttf") format("opentype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-ExtraLight.ttf") format("opentype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-Light.ttf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-Regular.ttf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-Thin.ttf") format("opentype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-Medium.ttf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/Poppins-Black.ttf") format("opentype");
+  font-weight: 900;
 }

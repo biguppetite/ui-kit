@@ -23,7 +23,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
 }) => {
   const [inChecked, setInChecked] = useState(!!checked);
 
-  if (props.value == undefined || props.value == null) {
+  if (props.value === undefined || props.value === null) {
     props.value = "";
   }
 

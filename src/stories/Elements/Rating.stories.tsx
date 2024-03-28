@@ -1,21 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Spinner from "../Elements/Spinner";
-import React from "react";
+import Rating from "../../Elements/Rating";
 
 const meta = {
-  title: "Example/Spinner",
-  component: Spinner,
+  title: "Example/Rating",
+  component: Rating,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {},
-} satisfies Meta<typeof Spinner>;
+} satisfies Meta<typeof Rating>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const spinner: Story = {
+
+export const rating: Story = {
   args: {
-    className: "w-10"
+    maxRate: 5,
+    rate: 3,
   },
 };

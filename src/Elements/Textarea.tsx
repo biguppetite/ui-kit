@@ -17,7 +17,7 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   errors = [],
   ...props
 }) => {
-  if (props.value == undefined || props.value == null) {
+  if (props.value === undefined || props.value === null) {
     props.value = "";
   }
 

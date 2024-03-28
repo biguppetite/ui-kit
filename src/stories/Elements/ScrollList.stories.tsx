@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ScrollList from "../Elements/ScrollList";
+import ScrollList from "../../Elements/ScrollList";
 import React from "react";
 
 const meta = {

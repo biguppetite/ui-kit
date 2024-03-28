@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 export enum buttonType {
   openMobileMenu = "openMobileMenu",
@@ -12,12 +13,14 @@ export enum buttonType {
   disclosure = "disclosure",
 }
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   btnType: buttonType;
   label: string;
   parentClassName?: string;
   child?: JSX.Element | JSX.Element[];
   errors?: [];
+  link?: string;
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({
@@ -26,6 +29,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   parentClassName,
   child,
   errors = [],
+  link,
   ...props
 }) => {
   const classMap = {
@@ -42,13 +46,23 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <div className={`flex flex-col ${parentClassName}`}>
-      <button
-        className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
-        name={props.name}
-      >
-        {label}
-        {child && child}
-      </button>
+      {link ? (
+        <Link
+          to={link}
+          className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
+        >
+          {label}
+          {child && child}
+        </Link>
+      ) : (
+        <button
+          className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
+          name={props.name}
+        >
+          {label}
+          {child && child}
+        </button>
+      )}
       {errors?.length > 0 && <div className="form-error">{errors}</div>}
     </div>
   );

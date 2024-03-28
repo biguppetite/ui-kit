@@ -1,7 +1,7 @@
 @layer base {
   :root {
-    --font-primary: "TacOne";
-    --header-font: "TacOne";
+    --font-primary: "Poppins";
+    --header-font: "Poppins";
 
     --color-creme: #ffe3c8;
     --color-cremeLight: #fbf7f3;

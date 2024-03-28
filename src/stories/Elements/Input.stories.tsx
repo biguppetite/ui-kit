@@ -1,23 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Modal from "../Elements/Modal";
-import React from "react";
+import Input from "../../Elements/Input";
 
 const meta = {
-  title: "Example/Modal",
-  component: Modal,
+  title: "Example/Input",
+  component: Input,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
-} satisfies Meta<typeof Modal>;
+  argTypes: {
+    label: { control: "string" },
+  },
+  args: { label: "button label" },
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const simpleInput: Story = {
   args: {
-    visible: true,
-    hide: () => {},
-    children: <div> modal</div>
+    label: "Button",
   },
 };

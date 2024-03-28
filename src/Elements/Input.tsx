@@ -16,7 +16,7 @@ const Input: React.FunctionComponent<InputProps> = ({
   errors = [],
   ...props
 }) => {
-  if (props.value == undefined || props.value == null) {
+  if (props.value === undefined || props.value === null) {
     props.value = "";
   }
 
