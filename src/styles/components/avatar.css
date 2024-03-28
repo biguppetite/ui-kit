@@ -1,0 +1,29 @@
+@layer components {
+    .avatar {
+        @apply flex items-center justify-center;
+    }
+
+    .avatarDataContainer {
+        @apply ml-3;
+    }
+
+    .avatarImage {
+        @apply w-14 aspect-square rounded-full overflow-hidden;
+    }
+
+    .avatarImage--square {
+        @apply rounded-md;
+    }
+
+    .avatarImage img {
+        @apply w-full h-full ;
+    }
+
+    .avatarName {
+        @apply font-primary_font font-medium text-sm md:text-base ;
+    }
+
+    .avatarDescription {
+        @apply font-primary_font font-normal text-xs md:text-sm;
+    }
+}
