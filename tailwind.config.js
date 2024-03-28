@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         16: "repeat(16, minmax(0, 1fr))",
+        'auto-fit': "repeat(auto-fit, minmax(0, 1fr))"
       },
       borderRadius: {
         'input' : 'var(--input-round)'

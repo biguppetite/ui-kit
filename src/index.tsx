@@ -14,6 +14,8 @@ import TextArea from "./Elements/Textarea";
 import Spinner from "./Elements/Spinner";
 import ScrollList from "./Elements/ScrollList";
 import Card from "./Components/Card";
+import Avatar from "./Components/Avatar"
+import Tab from "./Elements/Tab";
 
 export default {
   Button,
@@ -30,6 +32,9 @@ export default {
   TextArea,
   Spinner,
   ScrollList,
+  Tab,
 
   Card,
+  Avatar,
+  
 };

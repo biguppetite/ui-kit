@@ -1,0 +1,17 @@
+@layer components {
+  .tab {
+    @apply flex items-stretch justify-between w-full shadow-lg rounded-full overflow-hidden relative;
+  }
+
+  .tabViewer {
+    @apply absolute bg-primary rounded-full top-0 left-0 h-full z-10 duration-200;
+  }
+
+  .tabItem {
+    @apply flex-1 px-10 py-4 cursor-pointer text-sm font-normal text-primary z-20 duration-200 text-center;
+  }
+
+  .tabItemActive {
+    @apply text-white;
+  }
+}

@@ -19,6 +19,8 @@ export interface CardProps {
   descriptionClassName?: string;
   ButtonClassName?: string;
   imageClassName?: string;
+  ExtraComponent?: JSX.Element;
+  dataContainerClassName?: string;
 }
 
 const Card: React.FunctionComponent<CardProps> = ({
@@ -36,6 +38,8 @@ const Card: React.FunctionComponent<CardProps> = ({
   descriptionClassName,
   ButtonClassName,
   imageClassName,
+  dataContainerClassName,
+  ExtraComponent,
 }) => {
   const provider = (child: JSX.Element) =>
     cardLink ? (
@@ -68,7 +72,7 @@ const Card: React.FunctionComponent<CardProps> = ({
           src={image}
         />
       )}
-      <div className="cardData__dataContainer">
+      <div className={`cardData__dataContainer ${dataContainerClassName}`}>
         {!upTitle && title && (
           <Header
             text={title}
@@ -82,6 +86,7 @@ const Card: React.FunctionComponent<CardProps> = ({
             className={`cardData__description ${descriptionClassName}`}
           />
         )}
+        {ExtraComponent}
         {btnText && (
           <Button
             btnType={buttonType.primary}
