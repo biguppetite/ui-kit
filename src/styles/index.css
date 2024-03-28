@@ -14,6 +14,7 @@
 @import "./Elements/scrollList.css";
 @import "./Elements/header.css";
 @import "./Elements/tab.css";
+@import './Elements/breadcrumb.css';
 
 @import './components/card.css';
 @import './components/avatar.css';

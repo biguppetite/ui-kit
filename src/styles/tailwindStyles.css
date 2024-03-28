@@ -1246,6 +1246,28 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbItem {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: var(--color-text-dark);
+}
+
+@media (min-width: 768px) {
+  .breadcrumbItem {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
 .cardData {
   display: flex;
   flex-direction: column;
@@ -1452,20 +1474,16 @@ video {
   width: 24rem;
 }
 
+.w-\[800px\] {
+  width: 800px;
+}
+
 .w-full {
   width: 100%;
 }
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[400px\] {
-  width: 400px;
-}
-
-.w-\[800px\] {
-  width: 800px;
 }
 
 .\!max-w-full {
