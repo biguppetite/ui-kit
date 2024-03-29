@@ -1,5 +1,5 @@
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { CheckIcon, ArrowLeftIcon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
 import SimplyCarousel from 'react-simply-carousel';
@@ -103,7 +103,7 @@ var Button = function (_a) {
         _b[buttonType.stone] = "btn-stone",
         _b[buttonType.disclosure] = "disclosure-button",
         _b);
-    return (jsxs("div", __assign({ className: "flex flex-col ".concat(parentClassName) }, { children: [link ? (jsxs(Link, __assign({ to: link, className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className) }, { children: [label, child && child] }))) : (jsxs("button", __assign({ className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className), name: props.name }, { children: [label, child && child] }))), (errors === null || errors === void 0 ? void 0 : errors.length) > 0 && jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
+    return (jsxs("div", __assign({ className: "flex flex-col ".concat(parentClassName) }, { children: [link ? (jsxs(Link, __assign({ href: link, className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className) }, { children: [label, child && child] }))) : (jsxs("button", __assign({ className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className), name: props.name }, { children: [label, child && child] }))), (errors === null || errors === void 0 ? void 0 : errors.length) > 0 && jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
 };
 
 function UseTheme (theme) {
@@ -266,7 +266,7 @@ var ScrollList = function (_a) {
 var Card = function (_a) {
     var btnLink = _a.btnLink, btnOnClick = _a.btnOnClick, btnText = _a.btnText, cardLink = _a.cardLink, cardOnClick = _a.cardOnClick, description = _a.description, image = _a.image, title = _a.title, upTitle = _a.upTitle, className = _a.className, titleClassName = _a.titleClassName, descriptionClassName = _a.descriptionClassName, ButtonClassName = _a.ButtonClassName, imageClassName = _a.imageClassName, dataContainerClassName = _a.dataContainerClassName, paragraphExtraComponent = _a.paragraphExtraComponent, imageExtraComponent = _a.imageExtraComponent, ExtraComponent = _a.ExtraComponent;
     var provider = function (child) {
-        return cardLink ? (jsx(Link, __assign({ onClick: cardOnClick, className: "cardData ".concat(className), to: cardLink }, { children: child }))) : (jsx("div", __assign({ onClick: cardOnClick, className: "cardData ".concat(className) }, { children: child })));
+        return cardLink ? (jsx(Link, __assign({ onClick: cardOnClick, className: "cardData ".concat(className), href: cardLink }, { children: child }))) : (jsx("div", __assign({ onClick: cardOnClick, className: "cardData ".concat(className) }, { children: child })));
     };
     return provider(jsxs(Fragment, { children: [upTitle && title && (jsx(Header, { text: title, level: HeaderLevel.h3, className: "cardData__title cardData__title--top ".concat(titleClassName) })), jsxs("div", __assign({ className: "w-full ".concat(imageClassName) }, { children: [image && (jsx("img", { className: "w-full object-cover", alt: title || description, src: image })), imageExtraComponent] })), jsxs("div", __assign({ className: "cardData__dataContainer ".concat(dataContainerClassName) }, { children: [!upTitle && title && (jsx(Header, { text: title, level: HeaderLevel.h3, className: "cardData__title ".concat(titleClassName) })), paragraphExtraComponent, description && (jsx(Paragraph, { text: description, className: "cardData__description ".concat(descriptionClassName) })), ExtraComponent, btnText && (jsx(Button, { btnType: buttonType.primary, label: btnText, link: btnLink, onClick: btnOnClick, className: "".concat(ButtonClassName) }))] }))] }));
 };

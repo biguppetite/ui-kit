@@ -1,13 +1,14 @@
 'use strict';
 
 var jsxRuntime = require('react/jsx-runtime');
-var reactRouterDom = require('react-router-dom');
+var Link = require('next/link');
 var react = require('react');
 var solid = require('@heroicons/react/24/solid');
 var SimplyCarousel = require('react-simply-carousel');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+var Link__default = /*#__PURE__*/_interopDefaultLegacy(Link);
 var SimplyCarousel__default = /*#__PURE__*/_interopDefaultLegacy(SimplyCarousel);
 
 function styleInject(css, ref) {
@@ -109,7 +110,7 @@ var Button = function (_a) {
         _b[buttonType.stone] = "btn-stone",
         _b[buttonType.disclosure] = "disclosure-button",
         _b);
-    return (jsxRuntime.jsxs("div", __assign({ className: "flex flex-col ".concat(parentClassName) }, { children: [link ? (jsxRuntime.jsxs(reactRouterDom.Link, __assign({ to: link, className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className) }, { children: [label, child && child] }))) : (jsxRuntime.jsxs("button", __assign({ className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className), name: props.name }, { children: [label, child && child] }))), (errors === null || errors === void 0 ? void 0 : errors.length) > 0 && jsxRuntime.jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
+    return (jsxRuntime.jsxs("div", __assign({ className: "flex flex-col ".concat(parentClassName) }, { children: [link ? (jsxRuntime.jsxs(Link__default["default"], __assign({ href: link, className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className) }, { children: [label, child && child] }))) : (jsxRuntime.jsxs("button", __assign({ className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(props.className), name: props.name }, { children: [label, child && child] }))), (errors === null || errors === void 0 ? void 0 : errors.length) > 0 && jsxRuntime.jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
 };
 
 function UseTheme (theme) {
@@ -272,7 +273,7 @@ var ScrollList = function (_a) {
 var Card = function (_a) {
     var btnLink = _a.btnLink, btnOnClick = _a.btnOnClick, btnText = _a.btnText, cardLink = _a.cardLink, cardOnClick = _a.cardOnClick, description = _a.description, image = _a.image, title = _a.title, upTitle = _a.upTitle, className = _a.className, titleClassName = _a.titleClassName, descriptionClassName = _a.descriptionClassName, ButtonClassName = _a.ButtonClassName, imageClassName = _a.imageClassName, dataContainerClassName = _a.dataContainerClassName, paragraphExtraComponent = _a.paragraphExtraComponent, imageExtraComponent = _a.imageExtraComponent, ExtraComponent = _a.ExtraComponent;
     var provider = function (child) {
-        return cardLink ? (jsxRuntime.jsx(reactRouterDom.Link, __assign({ onClick: cardOnClick, className: "cardData ".concat(className), to: cardLink }, { children: child }))) : (jsxRuntime.jsx("div", __assign({ onClick: cardOnClick, className: "cardData ".concat(className) }, { children: child })));
+        return cardLink ? (jsxRuntime.jsx(Link__default["default"], __assign({ onClick: cardOnClick, className: "cardData ".concat(className), href: cardLink }, { children: child }))) : (jsxRuntime.jsx("div", __assign({ onClick: cardOnClick, className: "cardData ".concat(className) }, { children: child })));
     };
     return provider(jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [upTitle && title && (jsxRuntime.jsx(Header, { text: title, level: HeaderLevel.h3, className: "cardData__title cardData__title--top ".concat(titleClassName) })), jsxRuntime.jsxs("div", __assign({ className: "w-full ".concat(imageClassName) }, { children: [image && (jsxRuntime.jsx("img", { className: "w-full object-cover", alt: title || description, src: image })), imageExtraComponent] })), jsxRuntime.jsxs("div", __assign({ className: "cardData__dataContainer ".concat(dataContainerClassName) }, { children: [!upTitle && title && (jsxRuntime.jsx(Header, { text: title, level: HeaderLevel.h3, className: "cardData__title ".concat(titleClassName) })), paragraphExtraComponent, description && (jsxRuntime.jsx(Paragraph, { text: description, className: "cardData__description ".concat(descriptionClassName) })), ExtraComponent, btnText && (jsxRuntime.jsx(Button, { btnType: buttonType.primary, label: btnText, link: btnLink, onClick: btnOnClick, className: "".concat(ButtonClassName) }))] }))] }));
 };

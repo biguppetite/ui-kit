@@ -2,7 +2,7 @@ import React from "react";
 import Header, { HeaderLevel } from "../Elements/Header";
 import Paragraph from "../Elements/Paragraph";
 import Button, { buttonType } from "../Elements/Button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export interface CardProps {
   image?: string;
@@ -50,7 +50,7 @@ const Card: React.FunctionComponent<CardProps> = ({
       <Link
         onClick={cardOnClick}
         className={`cardData ${className}`}
-        to={cardLink}
+        href={cardLink}
       >
         {child}
       </Link>

@@ -1,5 +1,5 @@
+import Link from "next/link";
 import * as React from "react";
-import { Link } from "react-router-dom";
 
 export enum buttonType {
   openMobileMenu = "openMobileMenu",
@@ -48,7 +48,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     <div className={`flex flex-col ${parentClassName}`}>
       {link ? (
         <Link
-          to={link}
+          href={link}
           className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
         >
           {label}
