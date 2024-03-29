@@ -7,6 +7,7 @@ export interface AccordionProps {
   titleClassName?: string;
   dropDownIconClassName?: string;
   contentClassName?: string;
+  dropDownBtnTemplate?: (isActive: boolean) => JSX.Element;
 }
 
 const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -15,6 +16,7 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
   titleClassName,
   dropDownIconClassName,
   contentClassName,
+  dropDownBtnTemplate,
   ...props
 }) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
@@ -29,9 +31,13 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
           >
             {item.title}
 
-            <ChevronDownIcon
-              className={`accordionIcon ${dropDownIconClassName}`}
-            />
+            {dropDownBtnTemplate ? (
+              dropDownBtnTemplate(index === activeIndex)
+            ) : (
+              <ChevronDownIcon
+                className={`accordionIcon ${dropDownIconClassName}`}
+              />
+            )}
           </div>
           <div
             className={`max-h-0 w-full overflow-hidden transition-all duration-200 ${index === activeIndex && "max-h-screen"}`}
