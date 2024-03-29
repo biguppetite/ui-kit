@@ -10,24 +10,24 @@
     @apply rounded-md p-2 text-slate-100 transition-all duration-200 active:bg-transparent focus:outline-none focus:ring-0;
   }
   .btn-primary {
-    @apply text-white bg-primary border-2 border-primary hover:opacity-80 focus:ring-0 hover:text-white transition-all duration-200 font-semibold rounded-xl text-sm w-full sm:w-auto px-5 py-2 text-center;
+    @apply text-white bg-primary border-2 border-primary hover:opacity-80 focus:ring-0 hover:text-white transition-all duration-200 font-semibold rounded-button text-sm w-full sm:w-auto px-5 py-2 text-center;
   }
   .btn-primary-stroke-only{
-    @apply text-primary bg-white border-2 border-primary hover:opacity-80 focus:ring-0 hover:text-primary transition-all duration-200 font-semibold rounded-xl text-sm w-full sm:w-auto px-5 py-2 text-center;
+    @apply text-primary bg-white border-2 border-primary hover:opacity-80 focus:ring-0 hover:text-primary transition-all duration-200 font-semibold rounded-button text-sm w-full sm:w-auto px-5 py-2 text-center;
   }
   .btn-danger {
-    @apply text-white bg-vibrantRed border-vibrantRed border-2 hover:bg-opacity-80 focus:ring-0 hover:text-white transition-all duration-200 font-semibold rounded-xl text-sm w-full sm:w-auto px-5 py-2 text-center;
+    @apply text-white bg-vibrantRed border-vibrantRed border-2 hover:bg-opacity-80 focus:ring-0 hover:text-white transition-all duration-200 font-semibold rounded-button text-sm w-full sm:w-auto px-5 py-2 text-center;
   }
   .btn-stone {
-    @apply text-stone-600 bg-white hover:opacity-70 border border-stone-200 focus:ring-0 hover:text-stone-800 transition-all duration-200 font-semibold rounded-xl text-sm w-full sm:w-auto px-5 py-2 text-center;
+    @apply text-stone-600 bg-white hover:opacity-70 border border-stone-200 focus:ring-0 hover:text-stone-800 transition-all duration-200 font-semibold rounded-button text-sm w-full sm:w-auto px-5 py-2 text-center;
   }
   .btn-outline {
-    @apply border border-stone-200 bg-white from-white to-stone-100 bg-gradient-to-b text-stone-700 hover:shadow-inner hover:text-stone-800 focus:ring-0 transition-all font-semibold rounded-xl text-sm w-full sm:w-auto px-5 py-2 text-center;
+    @apply border border-stone-200 bg-white from-white to-stone-100 bg-gradient-to-b text-stone-700 hover:shadow-inner hover:text-stone-800 focus:ring-0 transition-all font-semibold rounded-button text-sm w-full sm:w-auto px-5 py-2 text-center;
   }
   .btn-selected {
-    @apply text-gray-900  bg-gray-100 focus:ring-0 transition-all duration-200 rounded-md text-sm w-full sm:w-auto px-5 py-3 text-center;
+    @apply text-gray-900  bg-gray-100 focus:ring-0 transition-all duration-200 rounded-button text-sm w-full sm:w-auto px-5 py-3 text-center;
   }
   .disclosure-button {
-    @apply flex w-full justify-between rounded-lg px-1 py-2 text-left text-base font-medium text-slate-900 hover:opacity-75 focus:outline-none;
+    @apply flex w-full justify-between rounded-button px-1 py-2 text-left text-base font-medium text-slate-900 hover:opacity-75 focus:outline-none;
   }
 }

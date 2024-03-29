@@ -17,7 +17,8 @@ module.exports = {
         'auto-fit': "repeat(auto-fit, minmax(0, 1fr))"
       },
       borderRadius: {
-        'input' : 'var(--input-round)'
+        'input' : 'var(--input-round)',
+        "button": 'var(--button-round)'
       }
     },
     colors: {
