@@ -15,7 +15,7 @@ export enum buttonType {
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  btnType: buttonType;
+  btnType: string;
   label: string | JSX.Element;
   parentClassName?: string;
   child?: JSX.Element | JSX.Element[];
@@ -32,7 +32,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   link,
   ...props
 }) => {
-  const classMap = {
+  const classMap:{[key:string]:string} = {
     [buttonType.openMobileMenu]: "btn-open-mobile-menu",
     [buttonType.dashboardOpenMobileMenu]: "btn-dashboard-open-mobile-menu",
     [buttonType.primary]: "btn-primary",
