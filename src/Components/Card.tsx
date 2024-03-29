@@ -20,6 +20,8 @@ export interface CardProps {
   ButtonClassName?: string;
   imageClassName?: string;
   ExtraComponent?: JSX.Element;
+  paragraphExtraComponent?: JSX.Element;
+  imageExtraComponent?: JSX.Element;
   dataContainerClassName?: string;
 }
 
@@ -39,6 +41,8 @@ const Card: React.FunctionComponent<CardProps> = ({
   ButtonClassName,
   imageClassName,
   dataContainerClassName,
+  paragraphExtraComponent,
+  imageExtraComponent,
   ExtraComponent,
 }) => {
   const provider = (child: JSX.Element) =>
@@ -65,13 +69,12 @@ const Card: React.FunctionComponent<CardProps> = ({
           className={`cardData__title cardData__title--top ${titleClassName}`}
         />
       )}
-      {image && (
-        <img
-          className={`w-full ${imageClassName}`}
-          alt={title || description}
-          src={image}
-        />
-      )}
+      <div className={`w-full ${imageClassName}`}>
+        {image && (
+          <img className="w-full object-cover" alt={title || description} src={image} />
+        )}
+        {imageExtraComponent}
+      </div>
       <div className={`cardData__dataContainer ${dataContainerClassName}`}>
         {!upTitle && title && (
           <Header
@@ -80,6 +83,7 @@ const Card: React.FunctionComponent<CardProps> = ({
             className={`cardData__title ${titleClassName}`}
           />
         )}
+        {paragraphExtraComponent}
         {description && (
           <Paragraph
             text={description}
