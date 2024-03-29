@@ -1,5 +1,6 @@
 /// <reference types="react" />
 import "./styles/index.css";
+import { buttonType } from "./Elements/Button";
 import UseTheme from "./Hooks/UseTheme";
 declare const _default: {
     Button: import("react").FunctionComponent<import("./Elements/Button").ButtonProps>;
@@ -19,5 +20,6 @@ declare const _default: {
     Tab: import("react").FunctionComponent<import("./Elements/Tab").tabProps>;
     Card: import("react").FunctionComponent<import("./Components/Card").CardProps>;
     Avatar: import("react").FunctionComponent<import("./Components/Avatar").AvatarProps>;
+    buttonType: typeof buttonType;
 };
 export default _default;

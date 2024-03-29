@@ -321,6 +321,7 @@ var index = {
     Tab: Tab,
     Card: Card,
     Avatar: Avatar,
+    buttonType: buttonType
 };
 
 module.exports = index;

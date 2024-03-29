@@ -314,6 +314,7 @@ var index = {
     Tab: Tab,
     Card: Card,
     Avatar: Avatar,
+    buttonType: buttonType
 };
 
 export { index as default };
