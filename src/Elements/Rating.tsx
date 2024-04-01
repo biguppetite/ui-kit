@@ -17,7 +17,6 @@ const Rating: React.FunctionComponent<RatingProps> = ({
   emptyStarClassName,
   fillStarClassName,
   onClick,
-  ...props
 }) => {
   const generateStars = () => {
     const stars = [];

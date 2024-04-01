@@ -71,7 +71,7 @@ const Card: React.FunctionComponent<CardProps> = ({
       )}
       <div className={`w-full ${imageClassName}`}>
         {image && (
-          <img className="w-full object-cover" alt={title || description} src={image} />
+          <img className="w-full h-full object-cover" alt={title || description} src={image} />
         )}
         {imageExtraComponent}
       </div>
