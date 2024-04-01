@@ -7,7 +7,7 @@ export declare enum HeaderLevel {
 }
 export interface HeaderType {
     text: string;
-    level: HeaderLevel;
+    level: string;
     className?: string;
 }
 declare const Header: React.FunctionComponent<HeaderType>;

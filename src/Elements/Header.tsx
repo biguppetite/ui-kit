@@ -7,7 +7,7 @@ export enum HeaderLevel {
 
 export interface HeaderType {
   text: string;
-  level: HeaderLevel;
+  level: string;
   className?: string;
 }
 
