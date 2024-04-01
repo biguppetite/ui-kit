@@ -1197,17 +1197,8 @@ video {
 
 .header {
   font-family: var(--header-font);
-  font-size: 1.125rem;
-  line-height: 1.75rem;
   font-weight: 600;
   color: var(--color-text-dark);
-}
-
-@media (min-width: 768px) {
-  .header {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 .tab {
@@ -1275,6 +1266,24 @@ video {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+}
+
+.paragraph {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  color: var(--color-text-dark);
+}
+
+.paragraph-small {
+  font-size: var(--paragraph-small);
+}
+
+.paragraph-medium {
+  font-size: var( --paragraph-medium);
+}
+
+.paragraph-large {
+  font-size: var(--paragraph-large);
 }
 
 .cardData {

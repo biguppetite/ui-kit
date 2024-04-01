@@ -15,6 +15,7 @@
 @import "./Elements/header.css";
 @import "./Elements/tab.css";
 @import './Elements/breadcrumb.css';
+@import './Elements/paragraph.css';
 
 @import './components/card.css';
 @import './components/avatar.css';

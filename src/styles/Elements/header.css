@@ -1,6 +1,6 @@
 @layer components {
   .header {
-    @apply text-text-dark font-header_font font-semibold text-lg md:text-2xl;
+    @apply text-text-dark font-header_font font-semibold;
   }
 
   .header-h1 {
