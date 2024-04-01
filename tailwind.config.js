@@ -19,6 +19,15 @@ module.exports = {
       borderRadius: {
         'input' : 'var(--input-round)',
         "button": 'var(--button-round)'
+      },
+      fontSize:{
+        'paragraph-small': 'var(--paragraph-small)',
+        'paragraph-medium': 'var( --paragraph-medium)',
+        'paragraph-large': 'var(--paragraph-large)',
+        'h1': 'var(--h1)',
+        'h2': 'var(--h2)',
+        'h4': 'var(--h4)',
+        'h3': 'var(--h3)',
       }
     },
     colors: {
@@ -37,6 +46,7 @@ module.exports = {
       primary_font: ["var(--font-primary)"],
       header_font: ["var(--header-font)"],
     },
+    
   },
   variants: {
     extend: {},

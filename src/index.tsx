@@ -16,6 +16,7 @@ import ScrollList from "./Elements/ScrollList";
 import Card from "./Components/Card";
 import Avatar from "./Components/Avatar"
 import Tab from "./Elements/Tab";
+import Rating from './Elements/Rating'
 
 export default {
   Button,
@@ -33,6 +34,7 @@ export default {
   Spinner,
   ScrollList,
   Tab,
+  Rating,
 
   Card,
   Avatar,

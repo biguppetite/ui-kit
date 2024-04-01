@@ -1,20 +1,21 @@
-
-
-export interface ParagraphProps  {
-    text:string,
-    className?:string
+export interface ParagraphProps {
+  text: string;
+  className?: string;
+  paragraphSize?: string;
 }
 
 const Paragraph: React.FunctionComponent<ParagraphProps> = ({
-    text,
-    className
+  text,
+  className,
+  paragraphSize,
 }) => {
+  const paragraphClass =
+    paragraphSize === "small"
+      ? "paragraph-small"
+      : paragraphSize === "medium"
+        ? "paragraph-medium"
+        : "paragraph-large";
+  return <p className={`paragraph ${paragraphClass} ${className}`}>{text}</p>;
+};
 
-    return (
-        <p className={`paragraph ${className}`}>
-            {text}
-        </p>
-    )
-}
-
-export default Paragraph
+export default Paragraph;

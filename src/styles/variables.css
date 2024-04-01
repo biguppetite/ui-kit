@@ -14,5 +14,14 @@
 
     --input-round: 6px;
     --button-round: 8px;
+
+    --paragraph-small: 14px;
+    --paragraph-medium: 20px;
+    --paragraph-large: 32px;
+
+    --h1: 94px;
+    --h2: 48px;
+    --h3: 38px;
+    --h4: 21px;
   }
 }

@@ -18,6 +18,7 @@ declare const _default: {
     Spinner: import("react").FunctionComponent<import("./Elements/Spinner").SpinnerProps>;
     ScrollList: import("react").FunctionComponent<import("./Elements/ScrollList").ScrollListProps>;
     Tab: import("react").FunctionComponent<import("./Elements/Tab").tabProps>;
+    Rating: import("react").FunctionComponent<import("./Elements/Rating").RatingProps>;
     Card: import("react").FunctionComponent<import("./Components/Card").CardProps>;
     Avatar: import("react").FunctionComponent<import("./Components/Avatar").AvatarProps>;
     buttonType: typeof buttonType;

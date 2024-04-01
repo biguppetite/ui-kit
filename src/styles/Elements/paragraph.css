@@ -1,5 +1,17 @@
 @layer components {
-    .paragraph {
-        @apply text-text-dark font-normal text-sm md:text-base font-primary_font;
-    }
+  .paragraph {
+    @apply text-text-dark font-normal text-sm md:text-base font-primary_font;
+  }
+
+  .paragraph-small {
+    @apply text-paragraph-small;
+  }
+
+  .paragraph-medium {
+    @apply text-paragraph-medium;
+  }
+  
+  .paragraph-large {
+    @apply text-paragraph-large;
+  }
 }

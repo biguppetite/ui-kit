@@ -16,9 +16,7 @@ const Header: React.FunctionComponent<HeaderType> = ({
   text,
   className,
 }) => {
-
-    const finalClass = `${className} header`
-
+  const finalClass = `${className} header header-${level}`;
 
   return level === HeaderLevel.h1 ? (
     <h1 className={finalClass}>{text}</h1>
@@ -31,4 +29,4 @@ const Header: React.FunctionComponent<HeaderType> = ({
   );
 };
 
-export default Header
+export default Header;
