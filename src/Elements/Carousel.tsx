@@ -14,6 +14,7 @@ export interface CarouselProps {
   rightControlIconClass?: string;
   containerClassName?: string;
   activeSlideClassName?: string;
+  controlIcon?: JSX.Element;
 }
 
 const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
@@ -27,6 +28,7 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
     rightControlClass,
     leftControlIconClass,
     rightControlIconClass,
+    controlIcon,
     containerClassName,
     activeSlideClassName,
   } = props;
@@ -53,15 +55,19 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
           className: activeSlideClassName,
         }}
         forwardBtnProps={{
-          children: (
+          children: controlIcon ? (
+            controlIcon
+          ) : (
             <ArrowLeftIcon
-              className={`rotate-180 carouselControlIcon ${rightControlIconClass}`}
+              className={` carouselControlIcon ${rightControlIconClass}`}
             />
           ),
-          className: `carouselControl ${controlClass} right-0 ${rightControlClass}`,
+          className: `carouselControl rotate-180 ${controlClass} right-0 ${rightControlClass}`,
         }}
         backwardBtnProps={{
-          children: (
+          children: controlIcon ? (
+            controlIcon
+          ) : (
             <ArrowLeftIcon
               className={`carouselControlIcon ${leftControlIconClass} `}
             />

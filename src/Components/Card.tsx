@@ -5,7 +5,7 @@ import Button, { buttonType } from "../Elements/Button";
 import Link from "next/link";
 
 export interface CardProps {
-  image?: string;
+  image?: string | JSX.Element;
   title?: string;
   description?: string;
   btnText?: string;
@@ -69,12 +69,18 @@ const Card: React.FunctionComponent<CardProps> = ({
           className={`cardData__title cardData__title--top ${titleClassName}`}
         />
       )}
-      <div className={`w-full ${imageClassName}`}>
-        {image && (
-          <img className="w-full h-full object-cover" alt={title || description} src={image} />
-        )}
-        {imageExtraComponent}
-      </div>
+
+      {typeof image === "string" ? (
+        <img
+          className={`w-full h-full object-cover ${imageClassName}`}
+          alt={title || description}
+          src={image}
+        />
+      ) : (
+        image
+      )}
+      {imageExtraComponent}
+
       <div className={`cardData__dataContainer ${dataContainerClassName}`}>
         {!upTitle && title && (
           <Header

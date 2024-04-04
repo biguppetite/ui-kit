@@ -22,8 +22,8 @@ const Rating: React.FunctionComponent<RatingProps> = ({
     const stars = [];
     for (let i = 0; i < maxRate; i++) {
       if (i < rate)
-        stars.push(<StarIcon onClick={onClick} className={`ratingFillStar ${fillStarClassName}`} />);
-      else stars.push(<StarLine onClick={onClick} className={`ratingEmptyStar ${emptyStarClassName}`} />);
+        stars.push(<StarIcon key={i} onClick={onClick} className={`ratingFillStar ${fillStarClassName}`} />);
+      else stars.push(<StarLine key={i} onClick={onClick} className={`ratingEmptyStar ${emptyStarClassName}`} />);
     }
     return stars;
   };

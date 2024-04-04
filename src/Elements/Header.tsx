@@ -6,7 +6,7 @@ export enum HeaderLevel {
 }
 
 export interface HeaderType {
-  text: string;
+  text: string | JSX.Element;
   level: string;
   className?: string;
 }
@@ -16,16 +16,16 @@ const Header: React.FunctionComponent<HeaderType> = ({
   text,
   className,
 }) => {
-  const finalClass = `${className} header header-${level}`;
+  const finalClass = `${className} header`;
 
   return level === HeaderLevel.h1 ? (
-    <h1 className={finalClass}>{text}</h1>
+    <h1 className={`${finalClass} header-h1`}>{text}</h1>
   ) : level === HeaderLevel.h2 ? (
-    <h2 className={finalClass}>{text}</h2>
+    <h2 className={`${finalClass} header-h2`}>{text}</h2>
   ) : level === HeaderLevel.h3 ? (
-    <h3 className={finalClass}>{text}</h3>
+    <h3 className={`${finalClass} header-h3`}>{text}</h3>
   ) : (
-    <h4 className={finalClass}>{text}</h4>
+    <h4 className={`${finalClass} header-h4`}>{text}</h4>
   );
 };
 

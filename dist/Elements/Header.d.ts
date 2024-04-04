@@ -6,7 +6,7 @@ export declare enum HeaderLevel {
     "h4" = "h4"
 }
 export interface HeaderType {
-    text: string;
+    text: string | JSX.Element;
     level: string;
     className?: string;
 }

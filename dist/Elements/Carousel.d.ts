@@ -11,6 +11,7 @@ export interface CarouselProps {
     rightControlIconClass?: string;
     containerClassName?: string;
     activeSlideClassName?: string;
+    controlIcon?: JSX.Element;
 }
 declare const Carousel: React.FunctionComponent<CarouselProps>;
 export default Carousel;

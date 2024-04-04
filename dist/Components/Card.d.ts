@@ -1,6 +1,6 @@
 import React from "react";
 export interface CardProps {
-    image?: string;
+    image?: string | JSX.Element;
     title?: string;
     description?: string;
     btnText?: string;
