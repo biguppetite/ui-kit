@@ -15,6 +15,10 @@ export interface CarouselProps {
   containerClassName?: string;
   activeSlideClassName?: string;
   controlIcon?: JSX.Element;
+  dotsNavActiveItemClassName?: string;
+  dotsNavContainerClassName?: string;
+  dotsNavItemsClassName?: string;
+  centerMode?:boolean;
 }
 
 const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
@@ -31,6 +35,10 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
     controlIcon,
     containerClassName,
     activeSlideClassName,
+    dotsNavActiveItemClassName,
+    dotsNavContainerClassName,
+    dotsNavItemsClassName,
+    centerMode
   } = props;
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -40,7 +48,7 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
         preventScrollOnSwipe
         swipeTreshold={60}
         activeSlideIndex={activeSlide}
-        centerMode
+        centerMode={centerMode}
         onRequestChange={setActiveSlide}
         containerProps={{
           className: "w-full justify-between",
@@ -76,6 +84,15 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ ...props }) => {
         }}
         dotsNav={{
           show: !!showDotsNav,
+          activeItemBtnProps: {
+            className: dotsNavActiveItemClassName,
+          },
+          containerProps: {
+            className: dotsNavContainerClassName,
+          },
+          itemBtnProps: {
+            className: dotsNavItemsClassName,
+          },
         }}
         itemsToShow={itemsToShow || 3}
         speed={speed || 400}

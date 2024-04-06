@@ -19,6 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Checked: Story = {
   args: {
     label: "Button",
-    btnType: buttonType.danger
+    btnType: buttonType.danger,
+    className: "mt-2 bg-red"
   },
 };

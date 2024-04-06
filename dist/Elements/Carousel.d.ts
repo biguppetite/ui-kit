@@ -12,6 +12,10 @@ export interface CarouselProps {
     containerClassName?: string;
     activeSlideClassName?: string;
     controlIcon?: JSX.Element;
+    dotsNavActiveItemClassName?: string;
+    dotsNavContainerClassName?: string;
+    dotsNavItemsClassName?: string;
+    centerMode?: boolean;
 }
 declare const Carousel: React.FunctionComponent<CarouselProps>;
 export default Carousel;

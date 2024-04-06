@@ -10,13 +10,15 @@ export declare enum buttonType {
     selected = "selected",
     disclosure = "disclosure"
 }
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps {
     btnType: string;
     label: string | JSX.Element;
     parentClassName?: string;
     child?: JSX.Element | JSX.Element[];
     errors?: [];
     link?: string;
+    onClick?: () => void;
+    className?: string;
 }
 declare const Button: React.FunctionComponent<ButtonProps>;
 export default Button;

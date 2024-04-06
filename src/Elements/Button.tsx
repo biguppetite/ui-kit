@@ -13,14 +13,15 @@ export enum buttonType {
   disclosure = "disclosure",
 }
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps  {
   btnType: string;
   label: string | JSX.Element;
   parentClassName?: string;
   child?: JSX.Element | JSX.Element[];
   errors?: [];
   link?: string;
+  onClick?:() => void,
+  className?:string
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({
@@ -30,9 +31,10 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   child,
   errors = [],
   link,
-  ...props
+  onClick,
+  className,
 }) => {
-  const classMap:{[key:string]:string} = {
+  const classMap: { [key: string]: string } = {
     [buttonType.openMobileMenu]: "btn-open-mobile-menu",
     [buttonType.dashboardOpenMobileMenu]: "btn-dashboard-open-mobile-menu",
     [buttonType.primary]: "btn-primary",
@@ -45,19 +47,20 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   };
 
   return (
-    <div className={`flex flex-col ${parentClassName}`}>
+    <div  className={`flex flex-col ${parentClassName}`}>
       {link ? (
         <Link
           href={link}
-          className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
+          className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${className}`}
+          onClick={onClick}
         >
           {label}
           {child && child}
         </Link>
       ) : (
         <button
-          className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${props.className}`}
-          name={props.name}
+          className={`button-main ${classMap[btnType] || classMap[buttonType.primary]} ${className}`}
+          onClick={onClick}
         >
           {label}
           {child && child}
