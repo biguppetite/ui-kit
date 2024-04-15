@@ -346,6 +346,15 @@ var Rating = function (_a) {
     return jsxRuntime.jsx("div", __assign({ className: "flex ".concat(containerClassName) }, { children: generateStars() }));
 };
 
+var Breadcrumb = function (_a) {
+    var items = _a.items, className = _a.className, itemClassName = _a.itemClassName, chevronClassName = _a.chevronClassName;
+    var provider = function (child, item) {
+        return (item === null || item === void 0 ? void 0 : item.link) ? (jsxRuntime.jsx(Link__default["default"], __assign({ href: item.link, className: "flex items-center breadcrumbItem ".concat(itemClassName, " ").concat(item.className) }, { children: child }))) : (jsxRuntime.jsx("div", __assign({ className: "flex items-center breadcrumbItem ".concat(itemClassName, " ").concat(item === null || item === void 0 ? void 0 : item.className, " ") }, { children: child })));
+    };
+    return (jsxRuntime.jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [index !== 0 && (jsxRuntime.jsx(solid.ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), provider(jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [item.icon &&
+                            (typeof item.icon === "string" ? (jsxRuntime.jsx("img", { src: item.icon })) : (item.icon)), item.name] }))] })); }) })));
+};
+
 var index = {
     Button: Button,
     UseTheme: UseTheme,
@@ -363,6 +372,7 @@ var index = {
     ScrollList: ScrollList,
     Tab: Tab,
     Rating: Rating,
+    Breadcrumb: Breadcrumb,
     Card: Card,
     Avatar: Avatar,
     buttonType: buttonType

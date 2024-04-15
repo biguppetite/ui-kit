@@ -19,6 +19,7 @@ declare const _default: {
     ScrollList: import("react").FunctionComponent<import("./Elements/ScrollList").ScrollListProps>;
     Tab: import("react").FunctionComponent<import("./Elements/Tab").tabProps>;
     Rating: import("react").FunctionComponent<import("./Elements/Rating").RatingProps>;
+    Breadcrumb: import("react").FunctionComponent<import("./Elements/Breadcrumb").BreadcrumbProps>;
     Card: import("react").FunctionComponent<import("./Components/Card").CardProps>;
     Avatar: import("react").FunctionComponent<import("./Components/Avatar").AvatarProps>;
     buttonType: typeof buttonType;

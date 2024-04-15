@@ -17,6 +17,7 @@ import Card from "./Components/Card";
 import Avatar from "./Components/Avatar"
 import Tab from "./Elements/Tab";
 import Rating from './Elements/Rating'
+import Breadcrumb from './Elements/Breadcrumb'
 
 export default {
   Button,
@@ -35,6 +36,7 @@ export default {
   ScrollList,
   Tab,
   Rating,
+  Breadcrumb,
 
   Card,
   Avatar,
