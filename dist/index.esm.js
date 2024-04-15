@@ -341,8 +341,8 @@ var Rating = function (_a) {
 
 var Breadcrumb = function (_a) {
     var items = _a.items, className = _a.className, itemClassName = _a.itemClassName, chevronClassName = _a.chevronClassName;
-    return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) }, index)), item.icon &&
-                    (typeof item.icon === "string" ? (jsx("img", { src: item.icon }, index)) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name }), index))] })); }) })));
+    return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), item.icon &&
+                    (typeof item.icon === "string" ? (jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name })))] })); }) })));
 };
 
 var index = {

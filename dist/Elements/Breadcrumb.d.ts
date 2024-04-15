@@ -1,7 +1,7 @@
 /// <reference types="react" />
 export interface BreadcrumbProps {
     items: {
-        name?: string | JSX.Element;
+        name?: string;
         id: string;
         icon?: string | JSX.Element;
         onClick?: (id: string) => void;

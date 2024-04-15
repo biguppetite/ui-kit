@@ -2,7 +2,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export interface BreadcrumbProps {
   items: {
-    name?: string | JSX.Element;
+    name?: string;
     id: string;
     icon?: string | JSX.Element;
     onClick?: (id: string) => void;
@@ -23,16 +23,16 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
       {items.map((item, index) => (
         <>
           {index !== 0 && (
-            <ChevronRightIcon key={index} className={`w-5 ${chevronClassName}`} />
+            <ChevronRightIcon className={`w-5 ${chevronClassName}`} />
           )}
           {item.icon &&
             (typeof item.icon === "string" ? (
-              <img key={index} src={item.icon} />
+              <img src={item.icon} />
             ) : (
               item.icon
             ))}
           {item.name && (
-            <div key={index} className={`breadcrumbItem ${itemClassName}`}>{item.name}</div>
+            <div className={`breadcrumbItem ${itemClassName}`}>{item.name}</div>
           )}
         </>
       ))}
