@@ -1,5 +1,6 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import React from "react";
 
 type itemType = {
   name?: string;
@@ -26,8 +27,8 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   const provider = (child: JSX.Element, item?: itemType) =>
     item?.link ? (
       <Link
-        href={item.link}
-        className={`flex items-center breadcrumbItem ${itemClassName} ${item.className}`}
+        href={item?.link}
+        className={`flex items-center breadcrumbItem ${itemClassName} ${item?.className}`}
       >
         {child}
       </Link>
@@ -42,7 +43,7 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   return (
     <div className={`breadcrumb ${className}`}>
       {items.map((item, index) => (
-        <>
+        <React.Fragment key={index}>
           {index !== 0 && (
             <ChevronRightIcon className={`w-5 ${chevronClassName}`} />
           )}
@@ -55,9 +56,10 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
                   item.icon
                 ))}
               {item.name}
-            </>
+            </>,
+            item
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

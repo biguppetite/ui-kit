@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 type itemType = {
     name?: string;
     id: string;
