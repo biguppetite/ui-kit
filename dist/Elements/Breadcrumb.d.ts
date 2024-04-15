@@ -1,11 +1,13 @@
-/// <reference types="react" />
+import React from "react";
+export type itemType = {
+    name?: string;
+    id: string;
+    icon?: string | JSX.Element;
+    onClick?: (id: string) => void;
+    link?: string;
+};
 export interface BreadcrumbProps {
-    items: {
-        name?: string;
-        id: string;
-        icon?: string | JSX.Element;
-        onClick?: (id: string) => void;
-    }[];
+    items: itemType[];
     className?: string;
     itemClassName?: string;
     chevronClassName?: string;

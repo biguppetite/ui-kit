@@ -1,6 +1,6 @@
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CheckIcon, ArrowLeftIcon, XMarkIcon, ChevronDownIcon, StarIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import SimplyCarousel from 'react-simply-carousel';
 import { StarIcon as StarIcon$1 } from '@heroicons/react/24/outline';
@@ -341,8 +341,11 @@ var Rating = function (_a) {
 
 var Breadcrumb = function (_a) {
     var items = _a.items, className = _a.className, itemClassName = _a.itemClassName, chevronClassName = _a.chevronClassName;
-    return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), item.icon &&
-                    (typeof item.icon === "string" ? (jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name })))] })); }) })));
+    var compProvider = function (childEl, item, index) {
+        return item.link ? (jsx(Link, __assign({ href: item.link }, { children: childEl }), index)) : (jsx("div", { children: childEl }));
+    };
+    return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(React.Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), compProvider(jsxs(Fragment, { children: [item.icon &&
+                            (typeof item.icon === "string" ? (jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name })))] }), item, index)] }, index)); }) })));
 };
 
 var index = {

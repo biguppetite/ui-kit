@@ -1,12 +1,17 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
+import React from "react";
+
+export type itemType = {
+  name?: string;
+  id: string;
+  icon?: string | JSX.Element;
+  onClick?: (id: string) => void;
+  link?: string;
+};
 
 export interface BreadcrumbProps {
-  items: {
-    name?: string;
-    id: string;
-    icon?: string | JSX.Element;
-    onClick?: (id: string) => void;
-  }[];
+  items: itemType[];
   className?: string;
   itemClassName?: string;
   chevronClassName?: string;
@@ -18,23 +23,40 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   itemClassName,
   chevronClassName,
 }) => {
+  const compProvider = (childEl: JSX.Element, item: itemType, index: number) =>
+    item.link ? (
+      <Link key={index} href={item.link}>
+        {childEl}
+      </Link>
+    ) : (
+      <div>{childEl}</div>
+    );
+
   return (
     <div className={`breadcrumb ${className}`}>
       {items.map((item, index) => (
-        <>
+        <React.Fragment key={index}>
           {index !== 0 && (
             <ChevronRightIcon className={`w-5 ${chevronClassName}`} />
           )}
-          {item.icon &&
-            (typeof item.icon === "string" ? (
-              <img src={item.icon} />
-            ) : (
-              item.icon
-            ))}
-          {item.name && (
-            <div className={`breadcrumbItem ${itemClassName}`}>{item.name}</div>
+          {compProvider(
+            <>
+              {item.icon &&
+                (typeof item.icon === "string" ? (
+                  <img src={item.icon} />
+                ) : (
+                  item.icon
+                ))}
+              {item.name && (
+                <div className={`breadcrumbItem ${itemClassName}`}>
+                  {item.name}
+                </div>
+              )}
+            </>,
+            item,
+            index
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
