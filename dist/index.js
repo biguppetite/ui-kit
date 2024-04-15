@@ -2,7 +2,7 @@
 
 var jsxRuntime = require('react/jsx-runtime');
 var Link = require('next/link');
-var React = require('react');
+var react = require('react');
 var solid = require('@heroicons/react/24/solid');
 var SimplyCarousel = require('react-simply-carousel');
 var outline = require('@heroicons/react/24/outline');
@@ -10,7 +10,6 @@ var outline = require('@heroicons/react/24/outline');
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var Link__default = /*#__PURE__*/_interopDefaultLegacy(Link);
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var SimplyCarousel__default = /*#__PURE__*/_interopDefaultLegacy(SimplyCarousel);
 
 function styleInject(css, ref) {
@@ -116,7 +115,7 @@ var Button = function (_a) {
 };
 
 function UseTheme (theme, classData) {
-    React.useEffect(function () {
+    react.useEffect(function () {
         var _a;
         var r = document.querySelector(":root");
         if (r.style) {
@@ -136,7 +135,7 @@ function UseTheme (theme, classData) {
 
 var Checkbox = function (_a) {
     var label = _a.label, name = _a.name, className = _a.className, inputClassName = _a.inputClassName, labelClassName = _a.labelClassName, child = _a.child, _b = _a.errors, errors = _b === void 0 ? [] : _b, checked = _a.checked, props = __rest(_a, ["label", "name", "className", "inputClassName", "labelClassName", "child", "errors", "checked"]);
-    var _c = React.useState(!!checked), inChecked = _c[0], setInChecked = _c[1];
+    var _c = react.useState(!!checked), inChecked = _c[0], setInChecked = _c[1];
     if (props.value === undefined || props.value === null) {
         props.value = "";
     }
@@ -153,7 +152,7 @@ var Input = function (_a) {
     if (props.value === undefined || props.value === null) {
         props.value = "";
     }
-    var _c = React.useState(props.value), inValue = _c[0], setInValue = _c[1];
+    var _c = react.useState(props.value), inValue = _c[0], setInValue = _c[1];
     var changeEvent = function (e) {
         setInValue(e.target.value);
         if (props.onChange)
@@ -165,7 +164,7 @@ var Input = function (_a) {
 var Carousel = function (_a) {
     var props = __rest(_a, []);
     var items = props.items, itemsToShow = props.itemsToShow, speed = props.speed, showDotsNav = props.showDotsNav, controlClass = props.controlClass, leftControlClass = props.leftControlClass, rightControlClass = props.rightControlClass, leftControlIconClass = props.leftControlIconClass, rightControlIconClass = props.rightControlIconClass, controlIcon = props.controlIcon, containerClassName = props.containerClassName, activeSlideClassName = props.activeSlideClassName, dotsNavActiveItemClassName = props.dotsNavActiveItemClassName, dotsNavContainerClassName = props.dotsNavContainerClassName, dotsNavItemsClassName = props.dotsNavItemsClassName, centerMode = props.centerMode;
-    var _b = React.useState(0), activeSlide = _b[0], setActiveSlide = _b[1];
+    var _b = react.useState(0), activeSlide = _b[0], setActiveSlide = _b[1];
     return (jsxRuntime.jsx("div", __assign({ className: "carouselContainer ".concat(containerClassName) }, { children: jsxRuntime.jsx(SimplyCarousel__default["default"], __assign({ preventScrollOnSwipe: true, swipeTreshold: 60, activeSlideIndex: activeSlide, centerMode: centerMode, onRequestChange: setActiveSlide, containerProps: {
                 className: "w-full justify-between",
             }, innerProps: {
@@ -196,9 +195,9 @@ var Carousel = function (_a) {
 
 var Dropdown = function (_a) {
     var label = _a.label, inputClassName = _a.inputClassName, _b = _a.errors, errors = _b === void 0 ? null : _b, items = _a.items, placeholder = _a.placeholder, value = _a.value, clearable = _a.clearable, _c = _a.editable, editable = _c === void 0 ? true : _c, itemLabel = _a.itemLabel, hideDropdownBtn = _a.hideDropdownBtn, itemTemplate = _a.itemTemplate, itemClassName = _a.itemClassName, onChange = _a.onChange, className = _a.className;
-    var _d = React.useState(value), selected = _d[0], setSelected = _d[1];
-    var _e = React.useState(null), inputValue = _e[0], setInputValue = _e[1];
-    var _f = React.useState(false), visible = _f[0], setVisible = _f[1];
+    var _d = react.useState(value), selected = _d[0], setSelected = _d[1];
+    var _e = react.useState(null), inputValue = _e[0], setInputValue = _e[1];
+    var _f = react.useState(false), visible = _f[0], setVisible = _f[1];
     var changeValue = function (e) {
         setVisible(true);
         setSelected(null);
@@ -236,7 +235,7 @@ var SwitchButton = function (props) {
 
 var Accordion = function (_a) {
     var items = _a.items, className = _a.className, titleClassName = _a.titleClassName, dropDownIconClassName = _a.dropDownIconClassName, contentClassName = _a.contentClassName, dropDownBtnTemplate = _a.dropDownBtnTemplate, contentOpenClassName = _a.contentOpenClassName, titleOpenClassName = _a.titleOpenClassName, changeActiveIndex = _a.changeActiveIndex;
-    var _b = React.useState(null), activeIndex = _b[0], setActiveIndex = _b[1];
+    var _b = react.useState(null), activeIndex = _b[0], setActiveIndex = _b[1];
     var changeIndex = function (index) {
         setActiveIndex(index === activeIndex ? null : index);
         if (changeActiveIndex)
@@ -279,7 +278,7 @@ var Textarea = function (_a) {
     if (props.value === undefined || props.value === null) {
         props.value = "";
     }
-    var _c = React.useState(props.value), inValue = _c[0], setInValue = _c[1];
+    var _c = react.useState(props.value), inValue = _c[0], setInValue = _c[1];
     var changeEvent = function (e) {
         setInValue(e.target.value);
         if (props.onChange)
@@ -314,7 +313,7 @@ var Avatar = function (_a) {
 
 var Tab = function (_a) {
     var activeId = _a.activeId, items = _a.items, onChange = _a.onChange, className = _a.className;
-    var _b = React.useState(activeId), activeTab = _b[0], setActiveTab = _b[1];
+    var _b = react.useState(activeId), activeTab = _b[0], setActiveTab = _b[1];
     var changeSelectedItem = function (id) {
         if (onChange)
             onChange(id);
@@ -349,11 +348,8 @@ var Rating = function (_a) {
 
 var Breadcrumb = function (_a) {
     var items = _a.items, className = _a.className, itemClassName = _a.itemClassName, chevronClassName = _a.chevronClassName;
-    var provider = function (child, item) {
-        return (item === null || item === void 0 ? void 0 : item.link) ? (jsxRuntime.jsx(Link__default["default"], __assign({ href: item === null || item === void 0 ? void 0 : item.link, className: "flex items-center breadcrumbItem ".concat(itemClassName, " ").concat(item === null || item === void 0 ? void 0 : item.className) }, { children: child }))) : (jsxRuntime.jsx("div", __assign({ className: "flex items-center breadcrumbItem ".concat(itemClassName, " ").concat(item === null || item === void 0 ? void 0 : item.className, " ") }, { children: child })));
-    };
-    return (jsxRuntime.jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxRuntime.jsxs(React__default["default"].Fragment, { children: [index !== 0 && (jsxRuntime.jsx(solid.ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), provider(jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [item.icon &&
-                            (typeof item.icon === "string" ? (jsxRuntime.jsx("img", { src: item.icon })) : (item.icon)), item.name] }), item)] }, index)); }) })));
+    return (jsxRuntime.jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [index !== 0 && (jsxRuntime.jsx(solid.ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) }, index)), item.icon &&
+                    (typeof item.icon === "string" ? (jsxRuntime.jsx("img", { src: item.icon }, index)) : (item.icon)), item.name && (jsxRuntime.jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name }), index))] })); }) })));
 };
 
 var index = {

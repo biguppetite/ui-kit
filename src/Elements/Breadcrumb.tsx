@@ -1,18 +1,12 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
-import React from "react";
-
-type itemType = {
-  name?: string;
-  id: string;
-  icon?: string | JSX.Element;
-  onClick?: (id: string) => void;
-  link?: string;
-  className?: string;
-};
 
 export interface BreadcrumbProps {
-  items: itemType[];
+  items: {
+    name?: string | JSX.Element;
+    id: string;
+    icon?: string | JSX.Element;
+    onClick?: (id: string) => void;
+  }[];
   className?: string;
   itemClassName?: string;
   chevronClassName?: string;
@@ -24,42 +18,23 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   itemClassName,
   chevronClassName,
 }) => {
-  const provider = (child: JSX.Element, item?: itemType) =>
-    item?.link ? (
-      <Link
-        href={item?.link}
-        className={`flex items-center breadcrumbItem ${itemClassName} ${item?.className}`}
-      >
-        {child}
-      </Link>
-    ) : (
-      <div
-        className={`flex items-center breadcrumbItem ${itemClassName} ${item?.className} `}
-      >
-        {child}
-      </div>
-    );
-
   return (
     <div className={`breadcrumb ${className}`}>
       {items.map((item, index) => (
-        <React.Fragment key={index}>
+        <>
           {index !== 0 && (
-            <ChevronRightIcon className={`w-5 ${chevronClassName}`} />
+            <ChevronRightIcon key={index} className={`w-5 ${chevronClassName}`} />
           )}
-          {provider(
-            <>
-              {item.icon &&
-                (typeof item.icon === "string" ? (
-                  <img src={item.icon} />
-                ) : (
-                  item.icon
-                ))}
-              {item.name}
-            </>,
-            item
+          {item.icon &&
+            (typeof item.icon === "string" ? (
+              <img key={index} src={item.icon} />
+            ) : (
+              item.icon
+            ))}
+          {item.name && (
+            <div key={index} className={`breadcrumbItem ${itemClassName}`}>{item.name}</div>
           )}
-        </React.Fragment>
+        </>
       ))}
     </div>
   );

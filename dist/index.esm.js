@@ -1,6 +1,6 @@
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckIcon, ArrowLeftIcon, XMarkIcon, ChevronDownIcon, StarIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import SimplyCarousel from 'react-simply-carousel';
 import { StarIcon as StarIcon$1 } from '@heroicons/react/24/outline';
@@ -341,11 +341,8 @@ var Rating = function (_a) {
 
 var Breadcrumb = function (_a) {
     var items = _a.items, className = _a.className, itemClassName = _a.itemClassName, chevronClassName = _a.chevronClassName;
-    var provider = function (child, item) {
-        return (item === null || item === void 0 ? void 0 : item.link) ? (jsx(Link, __assign({ href: item === null || item === void 0 ? void 0 : item.link, className: "flex items-center breadcrumbItem ".concat(itemClassName, " ").concat(item === null || item === void 0 ? void 0 : item.className) }, { children: child }))) : (jsx("div", __assign({ className: "flex items-center breadcrumbItem ".concat(itemClassName, " ").concat(item === null || item === void 0 ? void 0 : item.className, " ") }, { children: child })));
-    };
-    return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(React.Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), provider(jsxs(Fragment, { children: [item.icon &&
-                            (typeof item.icon === "string" ? (jsx("img", { src: item.icon })) : (item.icon)), item.name] }), item)] }, index)); }) })));
+    return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) }, index)), item.icon &&
+                    (typeof item.icon === "string" ? (jsx("img", { src: item.icon }, index)) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name }), index))] })); }) })));
 };
 
 var index = {
