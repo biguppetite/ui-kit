@@ -234,9 +234,14 @@ var SwitchButton = function (props) {
 };
 
 var Accordion = function (_a) {
-    var items = _a.items, className = _a.className, titleClassName = _a.titleClassName, dropDownIconClassName = _a.dropDownIconClassName, contentClassName = _a.contentClassName, dropDownBtnTemplate = _a.dropDownBtnTemplate; __rest(_a, ["items", "className", "titleClassName", "dropDownIconClassName", "contentClassName", "dropDownBtnTemplate"]);
+    var items = _a.items, className = _a.className, titleClassName = _a.titleClassName, dropDownIconClassName = _a.dropDownIconClassName, contentClassName = _a.contentClassName, dropDownBtnTemplate = _a.dropDownBtnTemplate, contentOpenClassName = _a.contentOpenClassName, titleOpenClassName = _a.titleOpenClassName, changeActiveIndex = _a.changeActiveIndex;
     var _b = react.useState(null), activeIndex = _b[0], setActiveIndex = _b[1];
-    return (jsxRuntime.jsx("div", __assign({ className: "accordionMain ".concat(className) }, { children: items.map(function (item, index) { return (jsxRuntime.jsxs("div", __assign({ className: "w-full" }, { children: [jsxRuntime.jsxs("div", __assign({ onClick: function () { return setActiveIndex(index === activeIndex ? null : index); }, className: "accordionTitle ".concat(titleClassName) }, { children: [item.title, dropDownBtnTemplate ? (dropDownBtnTemplate(index === activeIndex)) : (jsxRuntime.jsx(solid.ChevronDownIcon, { className: "accordionIcon ".concat(dropDownIconClassName) }))] })), jsxRuntime.jsx("div", __assign({ className: "max-h-0 w-full overflow-hidden transition-all duration-200 ".concat(index === activeIndex && "max-h-screen") }, { children: jsxRuntime.jsx("div", __assign({ className: "accordionContainer ".concat(contentClassName) }, { children: item.content })) }))] }), index)); }) })));
+    var changeIndex = function (index) {
+        setActiveIndex(index === activeIndex ? null : index);
+        if (changeActiveIndex)
+            changeActiveIndex(index === activeIndex ? null : index);
+    };
+    return (jsxRuntime.jsx("div", __assign({ className: "accordionMain ".concat(className) }, { children: items.map(function (item, index) { return (jsxRuntime.jsxs("div", __assign({ className: "w-full" }, { children: [jsxRuntime.jsxs("div", __assign({ onClick: function () { return changeIndex(index); }, className: "accordionTitle ".concat(titleClassName, " ").concat(index === activeIndex && titleOpenClassName) }, { children: [item.title, dropDownBtnTemplate ? (dropDownBtnTemplate(index === activeIndex)) : (jsxRuntime.jsx(solid.ChevronDownIcon, { className: "accordionIcon ".concat(dropDownIconClassName) }))] })), jsxRuntime.jsx("div", __assign({ className: "max-h-0 w-full overflow-hidden transition-all duration-200 ".concat(index === activeIndex && "max-h-screen") }, { children: jsxRuntime.jsx("div", __assign({ className: "accordionContainer ".concat(contentClassName, " ").concat(index === activeIndex && contentOpenClassName) }, { children: item.content })) }))] }), index)); }) })));
 };
 
 var Modal = function (_a) {

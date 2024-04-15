@@ -5,9 +5,12 @@ export interface AccordionProps {
   items: { title: string; content: string | JSX.Element }[];
   className?: string;
   titleClassName?: string;
+  titleOpenClassName?: string;
   dropDownIconClassName?: string;
   contentClassName?: string;
+  contentOpenClassName?: string;
   dropDownBtnTemplate?: (isActive: boolean) => JSX.Element;
+  changeActiveIndex?: (index: number | null) => void;
 }
 
 const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -17,17 +20,25 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
   dropDownIconClassName,
   contentClassName,
   dropDownBtnTemplate,
-  ...props
+  contentOpenClassName,
+  titleOpenClassName,
+  changeActiveIndex,
 }) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
+
+  const changeIndex = (index: number) => {
+    setActiveIndex(index === activeIndex ? null : index);
+    if (changeActiveIndex)
+      changeActiveIndex(index === activeIndex ? null : index);
+  };
 
   return (
     <div className={`accordionMain ${className}`}>
       {items.map((item, index) => (
         <div className="w-full" key={index}>
           <div
-            onClick={() => setActiveIndex(index === activeIndex ? null : index)}
-            className={`accordionTitle ${titleClassName}`}
+            onClick={() => changeIndex(index)}
+            className={`accordionTitle ${titleClassName} ${index === activeIndex && titleOpenClassName}`}
           >
             {item.title}
 
@@ -42,7 +53,9 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
           <div
             className={`max-h-0 w-full overflow-hidden transition-all duration-200 ${index === activeIndex && "max-h-screen"}`}
           >
-            <div className={`accordionContainer ${contentClassName}`}>
+            <div
+              className={`accordionContainer ${contentClassName} ${index === activeIndex && contentOpenClassName}`}
+            >
               {item.content}
             </div>
           </div>

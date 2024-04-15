@@ -6,9 +6,12 @@ export interface AccordionProps {
     }[];
     className?: string;
     titleClassName?: string;
+    titleOpenClassName?: string;
     dropDownIconClassName?: string;
     contentClassName?: string;
+    contentOpenClassName?: string;
     dropDownBtnTemplate?: (isActive: boolean) => JSX.Element;
+    changeActiveIndex?: (index: number | null) => void;
 }
 declare const Accordion: React.FunctionComponent<AccordionProps>;
 export default Accordion;
