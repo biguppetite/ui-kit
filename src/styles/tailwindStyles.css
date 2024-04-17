@@ -1020,7 +1020,7 @@ video {
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 50;
+  z-index: 110;
   display: flex;
   min-height: 4rem;
   width: -webkit-max-content;
@@ -1431,6 +1431,14 @@ video {
   z-index: 50;
 }
 
+.z-\[100\] {
+  z-index: 100;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1681,6 +1689,10 @@ video {
 
 .object-cover {
   object-fit: cover;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .p-2 {

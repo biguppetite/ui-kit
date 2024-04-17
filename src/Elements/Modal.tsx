@@ -15,7 +15,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({ ...props }) => {
     <>
       <div
         onClick={hide}
-        className="fixed top-0 left-0 w-screen h-screen backdrop-blur-sm z-40 bg-black/20"
+        className="fixed top-0 left-0 w-screen h-screen backdrop-blur-sm z-[100] bg-black/20"
       ></div>
       <div
         className={`modalContainer ${className}`}
