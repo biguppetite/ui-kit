@@ -11,6 +11,9 @@ export interface AccordionProps {
   contentOpenClassName?: string;
   dropDownBtnTemplate?: (isActive: boolean) => JSX.Element;
   changeActiveIndex?: (index: number | null) => void;
+  containerOpenClassName?: string;
+  containerClassName?: string;
+  dropDownIconOpenClassName?: string;
 }
 
 const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -21,8 +24,11 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
   contentClassName,
   dropDownBtnTemplate,
   contentOpenClassName,
+  containerClassName,
   titleOpenClassName,
+  containerOpenClassName,
   changeActiveIndex,
+  dropDownIconOpenClassName
 }) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
 
@@ -35,10 +41,17 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
   return (
     <div className={`accordionMain ${className}`}>
       {items.map((item, index) => (
-        <div className="w-full" key={index}>
+        <div
+          className={`w-full 
+          ${containerClassName}
+          ${index === activeIndex && containerOpenClassName}`}
+          key={index}
+        >
           <div
             onClick={() => changeIndex(index)}
-            className={`accordionTitle ${titleClassName} ${index === activeIndex && titleOpenClassName}`}
+            className={`accordionTitle ${titleClassName} ${
+              index === activeIndex && titleOpenClassName
+            }`}
           >
             {item.title}
 
@@ -46,15 +59,19 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
               dropDownBtnTemplate(index === activeIndex)
             ) : (
               <ChevronDownIcon
-                className={`accordionIcon ${dropDownIconClassName}`}
+                className={`accordionIcon ${dropDownIconClassName} ${index === activeIndex && dropDownIconOpenClassName}`}
               />
             )}
           </div>
           <div
-            className={`max-h-0 w-full overflow-hidden transition-all duration-200 ${index === activeIndex && "max-h-screen"}`}
+            className={`max-h-0 w-full overflow-hidden transition-all duration-200 ${
+              index === activeIndex && "max-h-screen"
+            }`}
           >
             <div
-              className={`accordionContainer ${contentClassName} ${index === activeIndex && contentOpenClassName}`}
+              className={`accordionContainer ${contentClassName} ${
+                index === activeIndex && contentOpenClassName
+              }`}
             >
               {item.content}
             </div>

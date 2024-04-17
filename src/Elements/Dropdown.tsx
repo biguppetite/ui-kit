@@ -1,8 +1,4 @@
-import React, {
-  ChangeEvent,
-  HTMLAttributes,
-  useState,
-} from "react";
+import React, { ChangeEvent, HTMLAttributes, useState } from "react";
 import { XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 export interface DropdownProps extends HTMLAttributes<HTMLElement> {
@@ -18,6 +14,9 @@ export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   hideDropdownBtn?: boolean;
   itemTemplate?: (e: any) => JSX.Element;
   itemClassName?: string;
+  containerClassName?: string;
+  dropdownIconContainerClassName?: string;
+  dropdownIconClassName?:string
 }
 
 const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -35,6 +34,9 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
   itemClassName,
   onChange,
   className,
+  containerClassName,
+  dropdownIconContainerClassName,
+  dropdownIconClassName
 }) => {
   const [selected, setSelected] = useState<string | null>(value);
   const [inputValue, setInputValue] = useState<string | null>(null);
@@ -85,11 +87,12 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
   };
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${containerClassName}`}>
       {label && <label className="form-label">{label}</label>}
-
       <div className="relative">
-        <div className="flex items-stretch  border border-gray-500 rounded-md overflow-hidden z-50 relative bg-white">
+        <div
+          className={`flex items-stretch  border border-gray-500 rounded-md overflow-hidden z-50 relative bg-white ${className}`}
+        >
           <input
             disabled={!editable}
             className={`flex-1 p-2 focus:outline-none ${inputClassName}`}
@@ -105,9 +108,9 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
           {!hideDropdownBtn && (
             <div
               onClick={() => setVisible((pre) => !pre)}
-              className="w-12 flex items-center justify-center cursor-pointer border-l border-gray-300"
+              className={`w-12 flex items-center justify-center cursor-pointer border-l border-gray-300 ${dropdownIconContainerClassName}`}
             >
-              <ChevronDownIcon className="w-5" />
+              <ChevronDownIcon className={`w-5 ${dropdownIconClassName}`} />
             </div>
           )}
         </div>

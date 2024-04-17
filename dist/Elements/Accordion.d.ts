@@ -12,6 +12,9 @@ export interface AccordionProps {
     contentOpenClassName?: string;
     dropDownBtnTemplate?: (isActive: boolean) => JSX.Element;
     changeActiveIndex?: (index: number | null) => void;
+    containerOpenClassName?: string;
+    containerClassName?: string;
+    dropDownIconOpenClassName?: string;
 }
 declare const Accordion: React.FunctionComponent<AccordionProps>;
 export default Accordion;
