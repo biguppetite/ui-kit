@@ -49,7 +49,7 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
                   item.icon
                 ))}
               {item.name && (
-                <div className={`breadcrumbItem ${itemClassName}`}>
+                <div className={`breadcrumbItem ${item.className} ${itemClassName}`}>
                   {item.name}
                 </div>
               )}
