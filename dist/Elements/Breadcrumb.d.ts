@@ -5,6 +5,7 @@ export type itemType = {
     icon?: string | JSX.Element;
     onClick?: (id: string) => void;
     link?: string;
+    className?: string;
 };
 export interface BreadcrumbProps {
     items: itemType[];

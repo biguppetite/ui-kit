@@ -2,12 +2,13 @@ import React, { ChangeEvent, InputHTMLAttributes, useState } from "react";
 import { CheckIcon } from "@heroicons/react/24/solid";
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
-  name:string,
+  name: string;
   label?: string;
   labelClassName?: string;
   inputClassName?: string;
   child?: JSX.Element | JSX.Element[];
   errors?: [];
+  icon?: JSX.Element;
 }
 
 const Checkbox: React.FunctionComponent<CheckboxProps> = ({
@@ -19,6 +20,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   child,
   errors = [],
   checked,
+  icon,
   ...props
 }) => {
   const [inChecked, setInChecked] = useState(!!checked);
@@ -47,7 +49,9 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
         />
         {inChecked && (
           <label htmlFor={name}>
-            <CheckIcon className="absolute cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white w-4 font-bold" />
+            {icon || (
+              <CheckIcon className="absolute cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white w-4 font-bold" />
+            )}
           </label>
         )}
       </div>

@@ -19,10 +19,10 @@
     @apply bg-primary border-primary;
   }
 
-  .form-checkbox {
+  .form-checkbox, [type='checkbox'] {
     @apply relative flex w-auto p-2.5 text-sm leading-5 border focus:ring-0 outline-none accent-stone-200 appearance-none rounded-sm border-stone-300 cursor-pointer shadow-inner;
   }
-  .form-checkbox:checked {
+  .form-checkbox:checked, [type='checkbox']:checked {
     @apply bg-primary border-primary;
   }
 

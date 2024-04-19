@@ -6,6 +6,7 @@ export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     inputClassName?: string;
     child?: JSX.Element | JSX.Element[];
     errors?: [];
+    icon?: JSX.Element;
 }
 declare const Checkbox: React.FunctionComponent<CheckboxProps>;
 export default Checkbox;

@@ -8,6 +8,7 @@ export type itemType = {
   icon?: string | JSX.Element;
   onClick?: (id: string) => void;
   link?: string;
+  className?: string;
 };
 
 export interface BreadcrumbProps {
@@ -25,11 +26,11 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
 }) => {
   const compProvider = (childEl: JSX.Element, item: itemType, index: number) =>
     item.link ? (
-      <Link key={index} href={item.link}>
+      <Link className={item.className} key={index} href={item.link}>
         {childEl}
       </Link>
     ) : (
-      <div>{childEl}</div>
+      <div className={item.className}>{childEl}</div>
     );
 
   return (
