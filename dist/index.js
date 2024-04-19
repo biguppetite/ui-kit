@@ -353,7 +353,7 @@ var Breadcrumb = function (_a) {
         return item.link ? (jsxRuntime.jsx(Link__default["default"], __assign({ className: item.className, href: item.link }, { children: childEl }), index)) : (jsxRuntime.jsx("div", __assign({ className: item.className }, { children: childEl })));
     };
     return (jsxRuntime.jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxRuntime.jsxs(React__default["default"].Fragment, { children: [index !== 0 && (jsxRuntime.jsx(solid.ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), compProvider(jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [item.icon &&
-                            (typeof item.icon === "string" ? (jsxRuntime.jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsxRuntime.jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name })))] }), item, index)] }, index)); }) })));
+                            (typeof item.icon === "string" ? (jsxRuntime.jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsxRuntime.jsx("div", __assign({ className: "breadcrumbItem ".concat(item.className, " ").concat(itemClassName) }, { children: item.name })))] }), item, index)] }, index)); }) })));
 };
 
 var index = {

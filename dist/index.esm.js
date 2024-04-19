@@ -345,7 +345,7 @@ var Breadcrumb = function (_a) {
         return item.link ? (jsx(Link, __assign({ className: item.className, href: item.link }, { children: childEl }), index)) : (jsx("div", __assign({ className: item.className }, { children: childEl })));
     };
     return (jsx("div", __assign({ className: "breadcrumb ".concat(className) }, { children: items.map(function (item, index) { return (jsxs(React.Fragment, { children: [index !== 0 && (jsx(ChevronRightIcon, { className: "w-5 ".concat(chevronClassName) })), compProvider(jsxs(Fragment, { children: [item.icon &&
-                            (typeof item.icon === "string" ? (jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(itemClassName) }, { children: item.name })))] }), item, index)] }, index)); }) })));
+                            (typeof item.icon === "string" ? (jsx("img", { src: item.icon })) : (item.icon)), item.name && (jsx("div", __assign({ className: "breadcrumbItem ".concat(item.className, " ").concat(itemClassName) }, { children: item.name })))] }), item, index)] }, index)); }) })));
 };
 
 var index = {
