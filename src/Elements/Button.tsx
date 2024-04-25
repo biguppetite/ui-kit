@@ -1,5 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
+import Spinner from "./Spinner";
 
 export enum buttonType {
   openMobileMenu = "openMobileMenu",
@@ -21,7 +22,9 @@ export interface ButtonProps  {
   errors?: [];
   link?: string;
   onClick?:() => void,
-  className?:string
+  className?:string,
+  loading?:boolean,
+  loadingClassName?:string
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({
@@ -33,6 +36,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   link,
   onClick,
   className,
+  loading,
+  loadingClassName
 }) => {
   const classMap: { [key: string]: string } = {
     [buttonType.openMobileMenu]: "btn-open-mobile-menu",
@@ -56,6 +61,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         >
           {label}
           {child && child}
+          {loading && <Spinner className={`ml-1 ${loadingClassName}`} />}
         </Link>
       ) : (
         <button
@@ -64,6 +70,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         >
           {label}
           {child && child}
+          {loading && <Spinner className={`ml-1 ${loadingClassName}`} />}
         </button>
       )}
       {errors?.length > 0 && <div className="form-error">{errors}</div>}

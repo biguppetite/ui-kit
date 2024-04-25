@@ -23,3 +23,12 @@ export const Checked: Story = {
     className: "mt-2 bg-red"
   },
 };
+
+export const loading: Story = {
+  args: {
+    label: "Button",
+    btnType: buttonType.primary,
+    className: "mt-2 bg-red",
+    loading: true
+  },
+};

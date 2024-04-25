@@ -5,7 +5,7 @@ export interface TextareaProps
   label: string;
   inputClassName?: string;
   child?: JSX.Element | JSX.Element[];
-  errors?: [];
+  errors?: string[];
 }
 
 const Textarea: React.FunctionComponent<TextareaProps> = ({

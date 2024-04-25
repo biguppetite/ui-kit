@@ -19,6 +19,8 @@ export interface ButtonProps {
     link?: string;
     onClick?: () => void;
     className?: string;
+    loading?: boolean;
+    loadingClassName?: string;
 }
 declare const Button: React.FunctionComponent<ButtonProps>;
 export default Button;

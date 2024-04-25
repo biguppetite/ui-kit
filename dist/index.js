@@ -86,6 +86,12 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
+var Spinner = function (_a) {
+    var props = __rest(_a, []);
+    var className = props.className;
+    return (jsxRuntime.jsx("div", { className: "".concat(className, " spinner") }));
+};
+
 var buttonType;
 (function (buttonType) {
     buttonType["openMobileMenu"] = "openMobileMenu";
@@ -100,7 +106,7 @@ var buttonType;
 })(buttonType || (buttonType = {}));
 var Button = function (_a) {
     var _b;
-    var label = _a.label, btnType = _a.btnType, parentClassName = _a.parentClassName, child = _a.child, _c = _a.errors, errors = _c === void 0 ? [] : _c, link = _a.link, onClick = _a.onClick, className = _a.className;
+    var label = _a.label, btnType = _a.btnType, parentClassName = _a.parentClassName, child = _a.child, _c = _a.errors, errors = _c === void 0 ? [] : _c, link = _a.link, onClick = _a.onClick, className = _a.className, loading = _a.loading, loadingClassName = _a.loadingClassName;
     var classMap = (_b = {},
         _b[buttonType.openMobileMenu] = "btn-open-mobile-menu",
         _b[buttonType.dashboardOpenMobileMenu] = "btn-dashboard-open-mobile-menu",
@@ -112,7 +118,7 @@ var Button = function (_a) {
         _b[buttonType.stone] = "btn-stone",
         _b[buttonType.disclosure] = "disclosure-button",
         _b);
-    return (jsxRuntime.jsxs("div", __assign({ className: "flex flex-col ".concat(parentClassName) }, { children: [link ? (jsxRuntime.jsxs(Link__default["default"], __assign({ href: link, className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(className), onClick: onClick }, { children: [label, child && child] }))) : (jsxRuntime.jsxs("button", __assign({ className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(className), onClick: onClick }, { children: [label, child && child] }))), (errors === null || errors === void 0 ? void 0 : errors.length) > 0 && jsxRuntime.jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
+    return (jsxRuntime.jsxs("div", __assign({ className: "flex flex-col ".concat(parentClassName) }, { children: [link ? (jsxRuntime.jsxs(Link__default["default"], __assign({ href: link, className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(className), onClick: onClick }, { children: [label, child && child, loading && jsxRuntime.jsx(Spinner, { className: "ml-1 ".concat(loadingClassName) })] }))) : (jsxRuntime.jsxs("button", __assign({ className: "button-main ".concat(classMap[btnType] || classMap[buttonType.primary], " ").concat(className), onClick: onClick }, { children: [label, child && child, loading && jsxRuntime.jsx(Spinner, { className: "ml-1 ".concat(loadingClassName) })] }))), (errors === null || errors === void 0 ? void 0 : errors.length) > 0 && jsxRuntime.jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
 };
 
 function UseTheme (theme, classData) {
@@ -286,12 +292,6 @@ var Textarea = function (_a) {
             props.onChange(e);
     };
     return (jsxRuntime.jsxs("div", __assign({ className: className }, { children: [label && (jsxRuntime.jsx("label", __assign({ className: "form-label", htmlFor: name }, { children: label }))), jsxRuntime.jsx("textarea", __assign({}, props, { value: inValue, id: name, className: "form-input ".concat(inputClassName, " ").concat(errors.length ? "form-input-error" : ""), onChange: changeEvent })), child && child, errors.length > 0 && jsxRuntime.jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
-};
-
-var Spinner = function (_a) {
-    var props = __rest(_a, []);
-    var className = props.className;
-    return (jsxRuntime.jsx("div", { className: "".concat(className, " spinner") }));
 };
 
 var ScrollList = function (_a) {

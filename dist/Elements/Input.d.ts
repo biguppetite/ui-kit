@@ -3,7 +3,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     inputClassName?: string;
     child?: JSX.Element | JSX.Element[];
-    errors?: [];
+    errors?: string[];
     icon?: JSX.Element;
     iconPosition?: 'right' | 'left';
 }
