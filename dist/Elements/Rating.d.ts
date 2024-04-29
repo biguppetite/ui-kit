@@ -5,7 +5,7 @@ export interface RatingProps {
     emptyStarClassName?: string;
     fillStarClassName?: string;
     containerClassName?: string;
-    onClick?: () => void;
+    onClick?: (index: number) => void;
 }
 declare const Rating: React.FunctionComponent<RatingProps>;
 export default Rating;

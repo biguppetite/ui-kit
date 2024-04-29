@@ -6,7 +6,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   child?: JSX.Element | JSX.Element[];
   errors?: string[];
   icon?: JSX.Element;
-  iconPosition?:'right' | 'left'
+  iconPosition?: "right" | "left";
 }
 
 const Input: React.FunctionComponent<InputProps> = ({
@@ -41,7 +41,7 @@ const Input: React.FunctionComponent<InputProps> = ({
       <div
         className={`form-input ${inputClassName} ${errors.length ? "form-input-error" : ""}`}
       >
-        {iconPosition !== 'right' && icon}
+        {iconPosition !== "right" && icon}
         <input
           {...props}
           value={inValue}
@@ -49,7 +49,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           onChange={changeEvent}
           className="border-none outline-none focus:outline-none flex-1 p-0 m-0"
         />
-        {iconPosition === 'right' && icon}
+        {iconPosition === "right" && icon}
       </div>
       {child && child}
       {errors.length > 0 && <div className="form-error">{errors}</div>}

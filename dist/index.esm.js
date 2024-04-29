@@ -157,7 +157,7 @@ var Input = function (_a) {
         if (props.onChange)
             props.onChange(e);
     };
-    return (jsxs("div", __assign({ className: className }, { children: [label && (jsx("label", __assign({ className: "form-label", htmlFor: name }, { children: label }))), jsxs("div", __assign({ className: "form-input ".concat(inputClassName, " ").concat(errors.length ? "form-input-error" : "") }, { children: [iconPosition !== 'right' && icon, jsx("input", __assign({}, props, { value: inValue, id: name, onChange: changeEvent, className: "border-none outline-none focus:outline-none flex-1 p-0 m-0" })), iconPosition === 'right' && icon] })), child && child, errors.length > 0 && jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
+    return (jsxs("div", __assign({ className: className }, { children: [label && (jsx("label", __assign({ className: "form-label", htmlFor: name }, { children: label }))), jsxs("div", __assign({ className: "form-input ".concat(inputClassName, " ").concat(errors.length ? "form-input-error" : "") }, { children: [iconPosition !== "right" && icon, jsx("input", __assign({}, props, { value: inValue, id: name, onChange: changeEvent, className: "border-none outline-none focus:outline-none flex-1 p-0 m-0" })), iconPosition === "right" && icon] })), child && child, errors.length > 0 && jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
 };
 
 var Carousel = function (_a) {
@@ -328,11 +328,14 @@ var Rating = function (_a) {
     var maxRate = _a.maxRate, rate = _a.rate, containerClassName = _a.containerClassName, emptyStarClassName = _a.emptyStarClassName, fillStarClassName = _a.fillStarClassName, onClick = _a.onClick;
     var generateStars = function () {
         var stars = [];
-        for (var i = 0; i < maxRate; i++) {
+        var _loop_1 = function (i) {
             if (i < rate)
-                stars.push(jsx(StarIcon, { onClick: onClick, className: "ratingFillStar ".concat(fillStarClassName) }, i));
+                stars.push(jsx(StarIcon, { onClick: function () { return onClick && onClick(i); }, className: "ratingFillStar ".concat(fillStarClassName) }, i));
             else
-                stars.push(jsx(StarIcon$1, { onClick: onClick, className: "ratingEmptyStar ".concat(emptyStarClassName) }, i));
+                stars.push(jsx(StarIcon$1, { onClick: function () { return onClick && onClick(i); }, className: "ratingEmptyStar ".concat(emptyStarClassName) }, i));
+        };
+        for (var i = 0; i < maxRate; i++) {
+            _loop_1(i);
         }
         return stars;
     };

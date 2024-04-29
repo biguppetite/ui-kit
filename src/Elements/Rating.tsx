@@ -7,7 +7,7 @@ export interface RatingProps {
   emptyStarClassName?: string;
   fillStarClassName?: string;
   containerClassName?: string;
-  onClick?:() => void,
+  onClick?: (index: number) => void;
 }
 
 const Rating: React.FunctionComponent<RatingProps> = ({
@@ -22,8 +22,21 @@ const Rating: React.FunctionComponent<RatingProps> = ({
     const stars = [];
     for (let i = 0; i < maxRate; i++) {
       if (i < rate)
-        stars.push(<StarIcon key={i} onClick={onClick} className={`ratingFillStar ${fillStarClassName}`} />);
-      else stars.push(<StarLine key={i} onClick={onClick} className={`ratingEmptyStar ${emptyStarClassName}`} />);
+        stars.push(
+          <StarIcon
+            key={i}
+            onClick={() => onClick && onClick(i)}
+            className={`ratingFillStar ${fillStarClassName}`}
+          />
+        );
+      else
+        stars.push(
+          <StarLine
+            key={i}
+            onClick={() => onClick && onClick(i)}
+            className={`ratingEmptyStar ${emptyStarClassName}`}
+          />
+        );
     }
     return stars;
   };

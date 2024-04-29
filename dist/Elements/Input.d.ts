@@ -5,7 +5,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     child?: JSX.Element | JSX.Element[];
     errors?: string[];
     icon?: JSX.Element;
-    iconPosition?: 'right' | 'left';
+    iconPosition?: "right" | "left";
 }
 declare const Input: React.FunctionComponent<InputProps>;
 export default Input;
