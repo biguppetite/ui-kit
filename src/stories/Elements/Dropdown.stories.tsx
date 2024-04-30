@@ -34,3 +34,23 @@ export const basic: Story = {
     ],
   },
 };
+
+export const error: Story = {
+  args: {
+    label: "Dropdown",
+    value: "",
+    items: [
+      "United States",
+      "Canada",
+      "France",
+      "Brazil",
+      "China",
+      "India",
+      "Australia",
+      "Japan",
+      "Germany",
+      "South Africa",
+    ],
+    errors: ['there is an error']
+  },
+};

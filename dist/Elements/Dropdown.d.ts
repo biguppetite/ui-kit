@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 export interface DropdownProps extends HTMLAttributes<HTMLElement> {
     label?: string;
     inputClassName?: string;
-    errors?: [];
+    errors?: string[];
     items?: any[];
     placeholder?: string;
     value: any;

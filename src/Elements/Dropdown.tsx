@@ -4,7 +4,7 @@ import { XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   label?: string;
   inputClassName?: string;
-  errors?: [];
+  errors?: string[];
   items?: any[];
   placeholder?: string;
   value: any;
@@ -91,7 +91,9 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
       {label && <label className="form-label">{label}</label>}
       <div className="relative">
         <div
-          className={`flex items-stretch  border border-gray-500 rounded-md overflow-hidden z-50 relative bg-white ${className}`}
+          className={`flex items-stretch  border  rounded-md overflow-hidden z-50 relative bg-white 
+          ${className}
+          ${errors ? "form-input-error" : "border-gray-500"}`}
         >
           <input
             disabled={!editable}
