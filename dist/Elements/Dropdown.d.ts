@@ -15,6 +15,7 @@ export interface DropdownProps extends HTMLAttributes<HTMLElement> {
     containerClassName?: string;
     dropdownIconContainerClassName?: string;
     dropdownIconClassName?: string;
+    headerTemplate?: (v: any) => JSX.Element;
 }
 declare const Dropdown: React.FunctionComponent<DropdownProps>;
 export default Dropdown;

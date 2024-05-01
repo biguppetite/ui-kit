@@ -16,7 +16,8 @@ export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   itemClassName?: string;
   containerClassName?: string;
   dropdownIconContainerClassName?: string;
-  dropdownIconClassName?:string
+  dropdownIconClassName?: string;
+  headerTemplate?: (v: any) => JSX.Element;
 }
 
 const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -36,7 +37,8 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
   className,
   containerClassName,
   dropdownIconContainerClassName,
-  dropdownIconClassName
+  dropdownIconClassName,
+  headerTemplate,
 }) => {
   const [selected, setSelected] = useState<string | null>(value);
   const [inputValue, setInputValue] = useState<string | null>(null);
@@ -91,17 +93,22 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
       {label && <label className="form-label">{label}</label>}
       <div className="relative">
         <div
-          className={`flex items-stretch  border  rounded-md overflow-hidden z-50 relative bg-white 
+          onClick={() => setVisible((pre) => !pre)}
+          className={`dropdown-container
           ${className}
           ${errors ? "form-input-error" : "border-gray-500"}`}
         >
-          <input
-            disabled={!editable}
-            className={`flex-1 p-2 focus:outline-none ${inputClassName}`}
-            placeholder={placeholder}
-            onChange={changeValue}
-            value={inputValue || selected || ""}
-          />
+          {headerTemplate ? (
+            headerTemplate(selected)
+          ) : (
+            <input
+              disabled={!editable}
+              className={`flex-1 p-2 focus:outline-none ${inputClassName}`}
+              placeholder={placeholder}
+              onChange={changeValue}
+              value={inputValue || selected || ""}
+            />
+          )}
           {clearable && (
             <div className="w-5 h-5 cursor-pointer flex items-center justify-center rounded-full bg-gray-300 text-white my-auto mr-2">
               <XMarkIcon className="w-4" />
@@ -109,7 +116,6 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({
           )}
           {!hideDropdownBtn && (
             <div
-              onClick={() => setVisible((pre) => !pre)}
               className={`w-12 flex items-center justify-center cursor-pointer border-l border-gray-300 ${dropdownIconContainerClassName}`}
             >
               <ChevronDownIcon className={`w-5 ${dropdownIconClassName}`} />
