@@ -157,7 +157,7 @@ var Input = function (_a) {
         if (props.onChange)
             props.onChange(e);
     };
-    return (jsxs("div", __assign({ className: className }, { children: [label && (jsx("label", __assign({ className: "form-label", htmlFor: name }, { children: label }))), jsxs("div", __assign({ className: "form-input ".concat(inputClassName, " ").concat(errors.length ? "form-input-error" : "") }, { children: [iconPosition !== "right" && icon, jsx("input", __assign({}, props, { value: inValue, id: name, onChange: changeEvent, className: "border-none outline-none focus:outline-none flex-1 p-0 m-0" })), iconPosition === "right" && icon] })), child && child, errors.length > 0 && jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
+    return (jsxs("div", __assign({ className: className }, { children: [label && (jsx("label", __assign({ className: "form-label", htmlFor: name }, { children: label }))), jsxs("div", __assign({ className: "form-input ".concat(inputClassName, " ").concat(errors.length ? "form-input-error" : "") }, { children: [iconPosition !== "right" && icon, jsx("input", __assign({}, props, { value: inValue, id: name, onChange: changeEvent, className: "border-none outline-none focus:outline-none flex-1 p-0 m-0 bg-transparent" })), iconPosition === "right" && icon] })), child && child, errors.length > 0 && jsx("div", __assign({ className: "form-error" }, { children: errors }))] })));
 };
 
 var Carousel = function (_a) {

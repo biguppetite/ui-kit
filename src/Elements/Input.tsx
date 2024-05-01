@@ -47,7 +47,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           value={inValue}
           id={name}
           onChange={changeEvent}
-          className="border-none outline-none focus:outline-none flex-1 p-0 m-0"
+          className="border-none outline-none focus:outline-none flex-1 p-0 m-0 bg-transparent"
         />
         {iconPosition === "right" && icon}
       </div>

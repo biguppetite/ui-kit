@@ -39,3 +39,12 @@ export const InputIconRight: Story = {
   },
 };
 
+export const InputError: Story = {
+  args: {
+    label: "Button",
+    icon: <EyeIcon className="text-text-dark w-4 ml-1" />,
+    iconPosition: "right",
+    errors: ['error']
+  },
+};
+
