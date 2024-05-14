@@ -39,7 +39,7 @@ const Input: React.FunctionComponent<InputProps> = ({
         </label>
       )}
       <div
-        className={`form-input ${inputClassName} ${errors.length ? "form-input-error" : ""}`}
+        className={``}
       >
         {iconPosition !== "right" && icon}
         <input
@@ -47,7 +47,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           value={inValue}
           id={name}
           onChange={changeEvent}
-          className="border-none outline-none focus:outline-none flex-1 p-0 m-0 bg-transparent"
+          className={`form-input ${inputClassName} ${errors.length ? "form-input-error" : ""}`}
         />
         {iconPosition === "right" && icon}
       </div>
