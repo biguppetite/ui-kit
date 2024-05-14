@@ -39,7 +39,7 @@ const Input: React.FunctionComponent<InputProps> = ({
         </label>
       )}
       <div
-        className={``}
+        className={`flex`}
       >
         {iconPosition !== "right" && icon}
         <input
